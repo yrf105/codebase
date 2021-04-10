@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../codebase/random_number/random_number.h
+cstdlib
+-
+ctime
+-
+
+/home/wddxrw/workspace/codebase/C++/codebase/STL/utils.cc
+utils.h
+/home/wddxrw/workspace/codebase/C++/codebase/STL/utils.h
+random_number/random_number.h
+/home/wddxrw/workspace/codebase/C++/codebase/STL/random_number/random_number.h
+sstream
+-
+
+/home/wddxrw/workspace/codebase/C++/codebase/STL/utils.h
+time.h
+/home/wddxrw/workspace/codebase/C++/codebase/STL/time.h
+sys/time.h
+-
+iostream
+-
+string
+-
+

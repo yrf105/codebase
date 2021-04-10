@@ -1,0 +1,1 @@
+/bin/g++-9 -fPIC  -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11   -shared -Wl,-soname,libcodebase.so -o ../lib/libcodebase.so CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o CMakeFiles/codebase.dir/codebase/STL/utils.cc.o 
