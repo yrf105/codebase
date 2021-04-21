@@ -1,1 +1,1 @@
-/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11    CMakeFiles/test.dir/tests/test.cc.o  -o ../bin/test  -Wl,-rpath,/home/wddxrw/workspace/codebase/C++/lib ../lib/libcodebase.so 
+/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   CMakeFiles/test.dir/tests/test.cc.o  -o ../bin/test  -Wl,-rpath,/home/wddxrw/workspace/codebase/C++/lib ../lib/libcodebase.so 

@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_tuple.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test_tuple.dir/tests/test_tuple.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_tuple.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_tuple.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_function_bind.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test_function_bind.dir/tests/test_function_bind.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_function_bind.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_function_bind.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_allocator.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test_allocator.dir/tests/test_allocator.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_allocator.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_allocator.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_stl.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test_stl.dir/tests/test_stl.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_stl.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_stl.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_ucontext.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test_ucontext.dir/tests/test_ucontext.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_ucontext.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_ucontext.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_random_number.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test_random_number.dir/tests/test_random_number.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_random_number.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_random_number.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   -o CMakeFiles/test.dir/tests/test.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9  -Dcodebase_EXPORTS -D__FILE__=\\\"codebase/random_number/random_number.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g -fPIC   -o CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/random_number/random_number.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/codebase/random_number/random_number.cc"
+},
+{
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9  -Dcodebase_EXPORTS -D__FILE__=\\\"codebase/utils/utils.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g -fPIC   -o CMakeFiles/codebase.dir/codebase/utils/utils.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc"
+}
+]

@@ -114,6 +114,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_tuple
+
+# Build rule for target.
+test_tuple: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_tuple
+.PHONY : test_tuple
+
+# fast build rule for target.
+test_tuple/fast:
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/build
+.PHONY : test_tuple/fast
+
+#=============================================================================
+# Target rules for targets named test_function_bind
+
+# Build rule for target.
+test_function_bind: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_function_bind
+.PHONY : test_function_bind
+
+# fast build rule for target.
+test_function_bind/fast:
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/build
+.PHONY : test_function_bind/fast
+
+#=============================================================================
+# Target rules for targets named test_allocator
+
+# Build rule for target.
+test_allocator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_allocator
+.PHONY : test_allocator
+
+# fast build rule for target.
+test_allocator/fast:
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/build
+.PHONY : test_allocator/fast
+
+#=============================================================================
 # Target rules for targets named test_stl
 
 # Build rule for target.
@@ -125,6 +164,19 @@ test_stl: cmake_check_build_system
 test_stl/fast:
 	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/build
 .PHONY : test_stl/fast
+
+#=============================================================================
+# Target rules for targets named test_ucontext
+
+# Build rule for target.
+test_ucontext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_ucontext
+.PHONY : test_ucontext
+
+# fast build rule for target.
+test_ucontext/fast:
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/build
+.PHONY : test_ucontext/fast
 
 #=============================================================================
 # Target rules for targets named test_random_number
@@ -165,33 +217,6 @@ codebase/fast:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/build
 .PHONY : codebase/fast
 
-codebase/STL/utils.o: codebase/STL/utils.cc.o
-
-.PHONY : codebase/STL/utils.o
-
-# target to build an object file
-codebase/STL/utils.cc.o:
-	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/utils.cc.o
-.PHONY : codebase/STL/utils.cc.o
-
-codebase/STL/utils.i: codebase/STL/utils.cc.i
-
-.PHONY : codebase/STL/utils.i
-
-# target to preprocess a source file
-codebase/STL/utils.cc.i:
-	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/utils.cc.i
-.PHONY : codebase/STL/utils.cc.i
-
-codebase/STL/utils.s: codebase/STL/utils.cc.s
-
-.PHONY : codebase/STL/utils.s
-
-# target to generate assembly for a file
-codebase/STL/utils.cc.s:
-	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/utils.cc.s
-.PHONY : codebase/STL/utils.cc.s
-
 codebase/random_number/random_number.o: codebase/random_number/random_number.cc.o
 
 .PHONY : codebase/random_number/random_number.o
@@ -219,6 +244,33 @@ codebase/random_number/random_number.cc.s:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.s
 .PHONY : codebase/random_number/random_number.cc.s
 
+codebase/utils/utils.o: codebase/utils/utils.cc.o
+
+.PHONY : codebase/utils/utils.o
+
+# target to build an object file
+codebase/utils/utils.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/utils/utils.cc.o
+.PHONY : codebase/utils/utils.cc.o
+
+codebase/utils/utils.i: codebase/utils/utils.cc.i
+
+.PHONY : codebase/utils/utils.i
+
+# target to preprocess a source file
+codebase/utils/utils.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/utils/utils.cc.i
+.PHONY : codebase/utils/utils.cc.i
+
+codebase/utils/utils.s: codebase/utils/utils.cc.s
+
+.PHONY : codebase/utils/utils.s
+
+# target to generate assembly for a file
+codebase/utils/utils.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/utils/utils.cc.s
+.PHONY : codebase/utils/utils.cc.s
+
 tests/test.o: tests/test.cc.o
 
 .PHONY : tests/test.o
@@ -245,6 +297,60 @@ tests/test.s: tests/test.cc.s
 tests/test.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.s
 .PHONY : tests/test.cc.s
+
+tests/test_allocator.o: tests/test_allocator.cc.o
+
+.PHONY : tests/test_allocator.o
+
+# target to build an object file
+tests/test_allocator.cc.o:
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/tests/test_allocator.cc.o
+.PHONY : tests/test_allocator.cc.o
+
+tests/test_allocator.i: tests/test_allocator.cc.i
+
+.PHONY : tests/test_allocator.i
+
+# target to preprocess a source file
+tests/test_allocator.cc.i:
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/tests/test_allocator.cc.i
+.PHONY : tests/test_allocator.cc.i
+
+tests/test_allocator.s: tests/test_allocator.cc.s
+
+.PHONY : tests/test_allocator.s
+
+# target to generate assembly for a file
+tests/test_allocator.cc.s:
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/tests/test_allocator.cc.s
+.PHONY : tests/test_allocator.cc.s
+
+tests/test_function_bind.o: tests/test_function_bind.cc.o
+
+.PHONY : tests/test_function_bind.o
+
+# target to build an object file
+tests/test_function_bind.cc.o:
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/tests/test_function_bind.cc.o
+.PHONY : tests/test_function_bind.cc.o
+
+tests/test_function_bind.i: tests/test_function_bind.cc.i
+
+.PHONY : tests/test_function_bind.i
+
+# target to preprocess a source file
+tests/test_function_bind.cc.i:
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/tests/test_function_bind.cc.i
+.PHONY : tests/test_function_bind.cc.i
+
+tests/test_function_bind.s: tests/test_function_bind.cc.s
+
+.PHONY : tests/test_function_bind.s
+
+# target to generate assembly for a file
+tests/test_function_bind.cc.s:
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/tests/test_function_bind.cc.s
+.PHONY : tests/test_function_bind.cc.s
 
 tests/test_random_number.o: tests/test_random_number.cc.o
 
@@ -300,33 +406,103 @@ tests/test_stl.cc.s:
 	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/tests/test_stl.cc.s
 .PHONY : tests/test_stl.cc.s
 
+tests/test_tuple.o: tests/test_tuple.cc.o
+
+.PHONY : tests/test_tuple.o
+
+# target to build an object file
+tests/test_tuple.cc.o:
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/tests/test_tuple.cc.o
+.PHONY : tests/test_tuple.cc.o
+
+tests/test_tuple.i: tests/test_tuple.cc.i
+
+.PHONY : tests/test_tuple.i
+
+# target to preprocess a source file
+tests/test_tuple.cc.i:
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/tests/test_tuple.cc.i
+.PHONY : tests/test_tuple.cc.i
+
+tests/test_tuple.s: tests/test_tuple.cc.s
+
+.PHONY : tests/test_tuple.s
+
+# target to generate assembly for a file
+tests/test_tuple.cc.s:
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/tests/test_tuple.cc.s
+.PHONY : tests/test_tuple.cc.s
+
+tests/test_ucontext.o: tests/test_ucontext.cc.o
+
+.PHONY : tests/test_ucontext.o
+
+# target to build an object file
+tests/test_ucontext.cc.o:
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/tests/test_ucontext.cc.o
+.PHONY : tests/test_ucontext.cc.o
+
+tests/test_ucontext.i: tests/test_ucontext.cc.i
+
+.PHONY : tests/test_ucontext.i
+
+# target to preprocess a source file
+tests/test_ucontext.cc.i:
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/tests/test_ucontext.cc.i
+.PHONY : tests/test_ucontext.cc.i
+
+tests/test_ucontext.s: tests/test_ucontext.cc.s
+
+.PHONY : tests/test_ucontext.s
+
+# target to generate assembly for a file
+tests/test_ucontext.cc.s:
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/tests/test_ucontext.cc.s
+.PHONY : tests/test_ucontext.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... test_tuple"
+	@echo "... test_function_bind"
+	@echo "... test_allocator"
 	@echo "... test_stl"
 	@echo "... rebuild_cache"
+	@echo "... test_ucontext"
 	@echo "... test_random_number"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... codebase"
-	@echo "... codebase/STL/utils.o"
-	@echo "... codebase/STL/utils.i"
-	@echo "... codebase/STL/utils.s"
 	@echo "... codebase/random_number/random_number.o"
 	@echo "... codebase/random_number/random_number.i"
 	@echo "... codebase/random_number/random_number.s"
+	@echo "... codebase/utils/utils.o"
+	@echo "... codebase/utils/utils.i"
+	@echo "... codebase/utils/utils.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_allocator.o"
+	@echo "... tests/test_allocator.i"
+	@echo "... tests/test_allocator.s"
+	@echo "... tests/test_function_bind.o"
+	@echo "... tests/test_function_bind.i"
+	@echo "... tests/test_function_bind.s"
 	@echo "... tests/test_random_number.o"
 	@echo "... tests/test_random_number.i"
 	@echo "... tests/test_random_number.s"
 	@echo "... tests/test_stl.o"
 	@echo "... tests/test_stl.i"
 	@echo "... tests/test_stl.s"
+	@echo "... tests/test_tuple.o"
+	@echo "... tests/test_tuple.i"
+	@echo "... tests/test_tuple.s"
+	@echo "... tests/test_ucontext.o"
+	@echo "... tests/test_ucontext.i"
+	@echo "... tests/test_ucontext.s"
 .PHONY : help
 
 

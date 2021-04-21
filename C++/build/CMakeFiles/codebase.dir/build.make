@@ -73,29 +73,29 @@ CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.s"
 	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/random_number/random_number.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/random_number/random_number.cc -o CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.s
 
-CMakeFiles/codebase.dir/codebase/STL/utils.cc.o: CMakeFiles/codebase.dir/flags.make
-CMakeFiles/codebase.dir/codebase/STL/utils.cc.o: ../codebase/STL/utils.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/codebase.dir/codebase/STL/utils.cc.o"
-	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/STL/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/STL/utils.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/STL/utils.cc
+CMakeFiles/codebase.dir/codebase/utils/utils.cc.o: CMakeFiles/codebase.dir/flags.make
+CMakeFiles/codebase.dir/codebase/utils/utils.cc.o: ../codebase/utils/utils.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/codebase.dir/codebase/utils/utils.cc.o"
+	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/utils/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/utils/utils.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc
 
-CMakeFiles/codebase.dir/codebase/STL/utils.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/STL/utils.cc.i"
-	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/STL/utils.cc > CMakeFiles/codebase.dir/codebase/STL/utils.cc.i
+CMakeFiles/codebase.dir/codebase/utils/utils.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/utils/utils.cc.i"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/utils/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc > CMakeFiles/codebase.dir/codebase/utils/utils.cc.i
 
-CMakeFiles/codebase.dir/codebase/STL/utils.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/STL/utils.cc.s"
-	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/STL/utils.cc -o CMakeFiles/codebase.dir/codebase/STL/utils.cc.s
+CMakeFiles/codebase.dir/codebase/utils/utils.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/utils/utils.cc.s"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/utils/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc -o CMakeFiles/codebase.dir/codebase/utils/utils.cc.s
 
 # Object files for target codebase
 codebase_OBJECTS = \
 "CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o" \
-"CMakeFiles/codebase.dir/codebase/STL/utils.cc.o"
+"CMakeFiles/codebase.dir/codebase/utils/utils.cc.o"
 
 # External object files for target codebase
 codebase_EXTERNAL_OBJECTS =
 
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o
-../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/STL/utils.cc.o
+../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/utils/utils.cc.o
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/build.make
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library ../lib/libcodebase.so"

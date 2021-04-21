@@ -56,7 +56,11 @@ CMAKE_BINARY_DIR = /home/wddxrw/workspace/codebase/C++/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_tuple.dir/all
+all: CMakeFiles/test_function_bind.dir/all
+all: CMakeFiles/test_allocator.dir/all
 all: CMakeFiles/test_stl.dir/all
+all: CMakeFiles/test_ucontext.dir/all
 all: CMakeFiles/test_random_number.dir/all
 all: CMakeFiles/test.dir/all
 all: CMakeFiles/codebase.dir/all
@@ -69,12 +73,97 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_tuple.dir/clean
+clean: CMakeFiles/test_function_bind.dir/clean
+clean: CMakeFiles/test_allocator.dir/clean
 clean: CMakeFiles/test_stl.dir/clean
+clean: CMakeFiles/test_ucontext.dir/clean
 clean: CMakeFiles/test_random_number.dir/clean
 clean: CMakeFiles/test.dir/clean
 clean: CMakeFiles/codebase.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_tuple.dir
+
+# All Build rule for target.
+CMakeFiles/test_tuple.dir/all: CMakeFiles/codebase.dir/all
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/depend
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=14,15 "Built target test_tuple"
+.PHONY : CMakeFiles/test_tuple.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_tuple.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_tuple.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_tuple.dir/rule
+
+# Convenience name for target.
+test_tuple: CMakeFiles/test_tuple.dir/rule
+
+.PHONY : test_tuple
+
+# clean rule for target.
+CMakeFiles/test_tuple.dir/clean:
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/clean
+.PHONY : CMakeFiles/test_tuple.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_function_bind.dir
+
+# All Build rule for target.
+CMakeFiles/test_function_bind.dir/all: CMakeFiles/codebase.dir/all
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/depend
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=8,9 "Built target test_function_bind"
+.PHONY : CMakeFiles/test_function_bind.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_function_bind.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_function_bind.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_function_bind.dir/rule
+
+# Convenience name for target.
+test_function_bind: CMakeFiles/test_function_bind.dir/rule
+
+.PHONY : test_function_bind
+
+# clean rule for target.
+CMakeFiles/test_function_bind.dir/clean:
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/clean
+.PHONY : CMakeFiles/test_function_bind.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_allocator.dir
+
+# All Build rule for target.
+CMakeFiles/test_allocator.dir/all: CMakeFiles/codebase.dir/all
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/depend
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=6,7 "Built target test_allocator"
+.PHONY : CMakeFiles/test_allocator.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_allocator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_allocator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_allocator.dir/rule
+
+# Convenience name for target.
+test_allocator: CMakeFiles/test_allocator.dir/rule
+
+.PHONY : test_allocator
+
+# clean rule for target.
+CMakeFiles/test_allocator.dir/clean:
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/clean
+.PHONY : CMakeFiles/test_allocator.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/test_stl.dir
@@ -83,7 +172,7 @@ clean: CMakeFiles/codebase.dir/clean
 CMakeFiles/test_stl.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/depend
 	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=8,9 "Built target test_stl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=12,13 "Built target test_stl"
 .PHONY : CMakeFiles/test_stl.dir/all
 
 # Build rule for subdir invocation for target.
@@ -104,13 +193,40 @@ CMakeFiles/test_stl.dir/clean:
 .PHONY : CMakeFiles/test_stl.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_ucontext.dir
+
+# All Build rule for target.
+CMakeFiles/test_ucontext.dir/all: CMakeFiles/codebase.dir/all
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/depend
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=16,17 "Built target test_ucontext"
+.PHONY : CMakeFiles/test_ucontext.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_ucontext.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_ucontext.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_ucontext.dir/rule
+
+# Convenience name for target.
+test_ucontext: CMakeFiles/test_ucontext.dir/rule
+
+.PHONY : test_ucontext
+
+# clean rule for target.
+CMakeFiles/test_ucontext.dir/clean:
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/clean
+.PHONY : CMakeFiles/test_ucontext.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_random_number.dir
 
 # All Build rule for target.
 CMakeFiles/test_random_number.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_random_number.dir/build.make CMakeFiles/test_random_number.dir/depend
 	$(MAKE) -f CMakeFiles/test_random_number.dir/build.make CMakeFiles/test_random_number.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=6,7 "Built target test_random_number"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=10,11 "Built target test_random_number"
 .PHONY : CMakeFiles/test_random_number.dir/all
 
 # Build rule for subdir invocation for target.

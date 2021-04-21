@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../codebase/STL/utils.h
+../codebase/random_number/random_number.h
+cstdlib
+-
+ctime
+-
+
+../codebase/utils/utils.h
 time.h
-../codebase/STL/time.h
+../codebase/utils/time.h
 sys/time.h
 -
 iostream
@@ -16,20 +22,16 @@ iostream
 string
 -
 
-../codebase/random_number/random_number.h
-cstdlib
--
-ctime
--
-
 /home/wddxrw/workspace/codebase/C++/tests/test_stl.cc
-STL/utils.h
-/home/wddxrw/workspace/codebase/C++/tests/STL/utils.h
+utils/utils.h
+/home/wddxrw/workspace/codebase/C++/tests/utils/utils.h
 random_number/random_number.h
 /home/wddxrw/workspace/codebase/C++/tests/random_number/random_number.h
 iostream
 -
 array
+-
+vector
 -
 list
 -
@@ -37,7 +39,17 @@ forward_list
 -
 deque
 -
+set
+-
 algorithm
+-
+map
+-
+unordered_set
+-
+unordered_map
+-
+typeinfo
 -
 unistd.h
 -

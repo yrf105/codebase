@@ -24,7 +24,7 @@ include_directories(codebase/)
 
 set(LIB_SRC
     codebase/random_number/random_number.cc
-    codebase/STL/utils.cc)
+    codebase/utils/utils.cc)
 
 set(LIBS
     codebase)
@@ -37,6 +37,11 @@ redefine_file_macro(codebase)
 codebase_add_executable(test "tests/test.cc" codebase "${LIBS}")
 codebase_add_executable(test_random_number "tests/test_random_number.cc" codebase "${LIBS}")
 codebase_add_executable(test_stl "tests/test_stl.cc" codebase "${LIBS}")
+codebase_add_executable(test_allocator "tests/test_allocator.cc" codebase "${LIBS}")
+codebase_add_executable(test_function_bind "tests/test_function_bind.cc" codebase "${LIBS}")
+codebase_add_executable(test_ucontext "tests/test_ucontext.cc" codebase "${LIBS}")
+# codebase_add_executable(test_coroutine "tests/test_coroutine.cc" codebase "${LIBS}")
+codebase_add_executable(test_tuple "tests/test_tuple.cc" codebase "${LIBS}")
 
 
 # 指定可执行文件的存放路径
