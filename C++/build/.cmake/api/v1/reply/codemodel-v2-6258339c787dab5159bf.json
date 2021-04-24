@@ -1,0 +1,158 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "codebase",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "List_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-List_test-Debug-6811f78e379a89e99dce.json",
+					"name" : "List_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "codebase::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-codebase-Debug-ea3c4df1bfb7c541a1a1.json",
+					"name" : "codebase",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lock_free_queue_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lock_free_queue_test-Debug-2291db23f83396c4f846.json",
+					"name" : "lock_free_queue_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mmap_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mmap_test-Debug-733d99daaf471efe6c30.json",
+					"name" : "mmap_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "singleton_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-singleton_test-Debug-2109867fc0785f70854b.json",
+					"name" : "singleton_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-ab2aefdf715c1ddd7401.json",
+					"name" : "test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_allocator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_allocator-Debug-371f6e6ada7ee369dec8.json",
+					"name" : "test_allocator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_function_bind::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_function_bind-Debug-ab64c71fd97008d9e402.json",
+					"name" : "test_function_bind",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_random_number::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_random_number-Debug-ea269f39fef2bc73ab85.json",
+					"name" : "test_random_number",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_stl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_stl-Debug-723b34f1d9e509b61d56.json",
+					"name" : "test_stl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_tuple::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_tuple-Debug-a612961fc610242527fe.json",
+					"name" : "test_tuple",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ucontext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ucontext-Debug-7a9df7b4984328482b2b.json",
+					"name" : "test_ucontext",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wddxrw/workspace/codebase/C++/build",
+		"source" : "/home/wddxrw/workspace/codebase/C++"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

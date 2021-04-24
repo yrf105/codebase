@@ -6,27 +6,13 @@
 
 #IncludeRegexTransform: 
 
-../codebase/random_number/random_number.h
-cstdlib
--
-ctime
--
+/home/wddxrw/workspace/codebase/C++/codebase/datastructure/lock_free_queue.cc
+lock_free_queue.h
+/home/wddxrw/workspace/codebase/C++/codebase/datastructure/lock_free_queue.h
 
-/home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc
-utils.h
-/home/wddxrw/workspace/codebase/C++/codebase/utils/utils.h
-random_number/random_number.h
-/home/wddxrw/workspace/codebase/C++/codebase/utils/random_number/random_number.h
+/home/wddxrw/workspace/codebase/C++/codebase/datastructure/lock_free_queue.h
 sstream
 -
-
-/home/wddxrw/workspace/codebase/C++/codebase/utils/utils.h
-time.h
-/home/wddxrw/workspace/codebase/C++/codebase/utils/time.h
-sys/time.h
--
 iostream
--
-string
 -
 

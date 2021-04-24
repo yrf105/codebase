@@ -50,6 +50,17 @@
         "forward_list": "cpp",
         "unordered_set": "cpp",
         "map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "thread": "cpp",
+        "cstring": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp",
+        "ratio": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp",
+        "ciso646": "cpp"
     }
 }

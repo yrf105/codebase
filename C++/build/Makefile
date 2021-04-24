@@ -114,69 +114,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_tuple
+# Target rules for targets named test
 
 # Build rule for target.
-test_tuple: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_tuple
-.PHONY : test_tuple
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-test_tuple/fast:
-	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/build
-.PHONY : test_tuple/fast
-
-#=============================================================================
-# Target rules for targets named test_function_bind
-
-# Build rule for target.
-test_function_bind: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_function_bind
-.PHONY : test_function_bind
-
-# fast build rule for target.
-test_function_bind/fast:
-	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/build
-.PHONY : test_function_bind/fast
-
-#=============================================================================
-# Target rules for targets named test_allocator
-
-# Build rule for target.
-test_allocator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_allocator
-.PHONY : test_allocator
-
-# fast build rule for target.
-test_allocator/fast:
-	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/build
-.PHONY : test_allocator/fast
-
-#=============================================================================
-# Target rules for targets named test_stl
-
-# Build rule for target.
-test_stl: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_stl
-.PHONY : test_stl
-
-# fast build rule for target.
-test_stl/fast:
-	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/build
-.PHONY : test_stl/fast
-
-#=============================================================================
-# Target rules for targets named test_ucontext
-
-# Build rule for target.
-test_ucontext: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_ucontext
-.PHONY : test_ucontext
-
-# fast build rule for target.
-test_ucontext/fast:
-	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/build
-.PHONY : test_ucontext/fast
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 #=============================================================================
 # Target rules for targets named test_random_number
@@ -192,17 +140,30 @@ test_random_number/fast:
 .PHONY : test_random_number/fast
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named test_ucontext
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+test_ucontext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_ucontext
+.PHONY : test_ucontext
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+test_ucontext/fast:
+	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/build
+.PHONY : test_ucontext/fast
+
+#=============================================================================
+# Target rules for targets named test_stl
+
+# Build rule for target.
+test_stl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_stl
+.PHONY : test_stl
+
+# fast build rule for target.
+test_stl/fast:
+	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/build
+.PHONY : test_stl/fast
 
 #=============================================================================
 # Target rules for targets named codebase
@@ -216,6 +177,178 @@ codebase: cmake_check_build_system
 codebase/fast:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/build
 .PHONY : codebase/fast
+
+#=============================================================================
+# Target rules for targets named test_allocator
+
+# Build rule for target.
+test_allocator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_allocator
+.PHONY : test_allocator
+
+# fast build rule for target.
+test_allocator/fast:
+	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/build
+.PHONY : test_allocator/fast
+
+#=============================================================================
+# Target rules for targets named test_function_bind
+
+# Build rule for target.
+test_function_bind: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_function_bind
+.PHONY : test_function_bind
+
+# fast build rule for target.
+test_function_bind/fast:
+	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/build
+.PHONY : test_function_bind/fast
+
+#=============================================================================
+# Target rules for targets named test_tuple
+
+# Build rule for target.
+test_tuple: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_tuple
+.PHONY : test_tuple
+
+# fast build rule for target.
+test_tuple/fast:
+	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/build
+.PHONY : test_tuple/fast
+
+#=============================================================================
+# Target rules for targets named singleton_test
+
+# Build rule for target.
+singleton_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleton_test
+.PHONY : singleton_test
+
+# fast build rule for target.
+singleton_test/fast:
+	$(MAKE) -f CMakeFiles/singleton_test.dir/build.make CMakeFiles/singleton_test.dir/build
+.PHONY : singleton_test/fast
+
+#=============================================================================
+# Target rules for targets named mmap_test
+
+# Build rule for target.
+mmap_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mmap_test
+.PHONY : mmap_test
+
+# fast build rule for target.
+mmap_test/fast:
+	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/build
+.PHONY : mmap_test/fast
+
+#=============================================================================
+# Target rules for targets named List_test
+
+# Build rule for target.
+List_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 List_test
+.PHONY : List_test
+
+# fast build rule for target.
+List_test/fast:
+	$(MAKE) -f CMakeFiles/List_test.dir/build.make CMakeFiles/List_test.dir/build
+.PHONY : List_test/fast
+
+#=============================================================================
+# Target rules for targets named lock_free_queue_test
+
+# Build rule for target.
+lock_free_queue_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lock_free_queue_test
+.PHONY : lock_free_queue_test
+
+# fast build rule for target.
+lock_free_queue_test/fast:
+	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/build
+.PHONY : lock_free_queue_test/fast
+
+codebase/datastructure/List.o: codebase/datastructure/List.cc.o
+
+.PHONY : codebase/datastructure/List.o
+
+# target to build an object file
+codebase/datastructure/List.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o
+.PHONY : codebase/datastructure/List.cc.o
+
+codebase/datastructure/List.i: codebase/datastructure/List.cc.i
+
+.PHONY : codebase/datastructure/List.i
+
+# target to preprocess a source file
+codebase/datastructure/List.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/List.cc.i
+.PHONY : codebase/datastructure/List.cc.i
+
+codebase/datastructure/List.s: codebase/datastructure/List.cc.s
+
+.PHONY : codebase/datastructure/List.s
+
+# target to generate assembly for a file
+codebase/datastructure/List.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/List.cc.s
+.PHONY : codebase/datastructure/List.cc.s
+
+codebase/datastructure/lock_free_queue.o: codebase/datastructure/lock_free_queue.cc.o
+
+.PHONY : codebase/datastructure/lock_free_queue.o
+
+# target to build an object file
+codebase/datastructure/lock_free_queue.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o
+.PHONY : codebase/datastructure/lock_free_queue.cc.o
+
+codebase/datastructure/lock_free_queue.i: codebase/datastructure/lock_free_queue.cc.i
+
+.PHONY : codebase/datastructure/lock_free_queue.i
+
+# target to preprocess a source file
+codebase/datastructure/lock_free_queue.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.i
+.PHONY : codebase/datastructure/lock_free_queue.cc.i
+
+codebase/datastructure/lock_free_queue.s: codebase/datastructure/lock_free_queue.cc.s
+
+.PHONY : codebase/datastructure/lock_free_queue.s
+
+# target to generate assembly for a file
+codebase/datastructure/lock_free_queue.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.s
+.PHONY : codebase/datastructure/lock_free_queue.cc.s
+
+codebase/design_patterns/singleton.o: codebase/design_patterns/singleton.cc.o
+
+.PHONY : codebase/design_patterns/singleton.o
+
+# target to build an object file
+codebase/design_patterns/singleton.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o
+.PHONY : codebase/design_patterns/singleton.cc.o
+
+codebase/design_patterns/singleton.i: codebase/design_patterns/singleton.cc.i
+
+.PHONY : codebase/design_patterns/singleton.i
+
+# target to preprocess a source file
+codebase/design_patterns/singleton.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.i
+.PHONY : codebase/design_patterns/singleton.cc.i
+
+codebase/design_patterns/singleton.s: codebase/design_patterns/singleton.cc.s
+
+.PHONY : codebase/design_patterns/singleton.s
+
+# target to generate assembly for a file
+codebase/design_patterns/singleton.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.s
+.PHONY : codebase/design_patterns/singleton.cc.s
 
 codebase/random_number/random_number.o: codebase/random_number/random_number.cc.o
 
@@ -270,6 +403,114 @@ codebase/utils/utils.s: codebase/utils/utils.cc.s
 codebase/utils/utils.cc.s:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/utils/utils.cc.s
 .PHONY : codebase/utils/utils.cc.s
+
+tests/List_test.o: tests/List_test.cc.o
+
+.PHONY : tests/List_test.o
+
+# target to build an object file
+tests/List_test.cc.o:
+	$(MAKE) -f CMakeFiles/List_test.dir/build.make CMakeFiles/List_test.dir/tests/List_test.cc.o
+.PHONY : tests/List_test.cc.o
+
+tests/List_test.i: tests/List_test.cc.i
+
+.PHONY : tests/List_test.i
+
+# target to preprocess a source file
+tests/List_test.cc.i:
+	$(MAKE) -f CMakeFiles/List_test.dir/build.make CMakeFiles/List_test.dir/tests/List_test.cc.i
+.PHONY : tests/List_test.cc.i
+
+tests/List_test.s: tests/List_test.cc.s
+
+.PHONY : tests/List_test.s
+
+# target to generate assembly for a file
+tests/List_test.cc.s:
+	$(MAKE) -f CMakeFiles/List_test.dir/build.make CMakeFiles/List_test.dir/tests/List_test.cc.s
+.PHONY : tests/List_test.cc.s
+
+tests/lock_free_queue_test.o: tests/lock_free_queue_test.cc.o
+
+.PHONY : tests/lock_free_queue_test.o
+
+# target to build an object file
+tests/lock_free_queue_test.cc.o:
+	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/tests/lock_free_queue_test.cc.o
+.PHONY : tests/lock_free_queue_test.cc.o
+
+tests/lock_free_queue_test.i: tests/lock_free_queue_test.cc.i
+
+.PHONY : tests/lock_free_queue_test.i
+
+# target to preprocess a source file
+tests/lock_free_queue_test.cc.i:
+	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/tests/lock_free_queue_test.cc.i
+.PHONY : tests/lock_free_queue_test.cc.i
+
+tests/lock_free_queue_test.s: tests/lock_free_queue_test.cc.s
+
+.PHONY : tests/lock_free_queue_test.s
+
+# target to generate assembly for a file
+tests/lock_free_queue_test.cc.s:
+	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/tests/lock_free_queue_test.cc.s
+.PHONY : tests/lock_free_queue_test.cc.s
+
+tests/mmap_test.o: tests/mmap_test.cc.o
+
+.PHONY : tests/mmap_test.o
+
+# target to build an object file
+tests/mmap_test.cc.o:
+	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/tests/mmap_test.cc.o
+.PHONY : tests/mmap_test.cc.o
+
+tests/mmap_test.i: tests/mmap_test.cc.i
+
+.PHONY : tests/mmap_test.i
+
+# target to preprocess a source file
+tests/mmap_test.cc.i:
+	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/tests/mmap_test.cc.i
+.PHONY : tests/mmap_test.cc.i
+
+tests/mmap_test.s: tests/mmap_test.cc.s
+
+.PHONY : tests/mmap_test.s
+
+# target to generate assembly for a file
+tests/mmap_test.cc.s:
+	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/tests/mmap_test.cc.s
+.PHONY : tests/mmap_test.cc.s
+
+tests/singleton_test.o: tests/singleton_test.cc.o
+
+.PHONY : tests/singleton_test.o
+
+# target to build an object file
+tests/singleton_test.cc.o:
+	$(MAKE) -f CMakeFiles/singleton_test.dir/build.make CMakeFiles/singleton_test.dir/tests/singleton_test.cc.o
+.PHONY : tests/singleton_test.cc.o
+
+tests/singleton_test.i: tests/singleton_test.cc.i
+
+.PHONY : tests/singleton_test.i
+
+# target to preprocess a source file
+tests/singleton_test.cc.i:
+	$(MAKE) -f CMakeFiles/singleton_test.dir/build.make CMakeFiles/singleton_test.dir/tests/singleton_test.cc.i
+.PHONY : tests/singleton_test.cc.i
+
+tests/singleton_test.s: tests/singleton_test.cc.s
+
+.PHONY : tests/singleton_test.s
+
+# target to generate assembly for a file
+tests/singleton_test.cc.s:
+	$(MAKE) -f CMakeFiles/singleton_test.dir/build.make CMakeFiles/singleton_test.dir/tests/singleton_test.cc.s
+.PHONY : tests/singleton_test.cc.s
 
 tests/test.o: tests/test.cc.o
 
@@ -466,22 +707,47 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... test_tuple"
-	@echo "... test_function_bind"
-	@echo "... test_allocator"
-	@echo "... test_stl"
-	@echo "... rebuild_cache"
-	@echo "... test_ucontext"
-	@echo "... test_random_number"
-	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... test_random_number"
+	@echo "... test_ucontext"
+	@echo "... test_stl"
 	@echo "... codebase"
+	@echo "... test_allocator"
+	@echo "... test_function_bind"
+	@echo "... test_tuple"
+	@echo "... singleton_test"
+	@echo "... mmap_test"
+	@echo "... List_test"
+	@echo "... lock_free_queue_test"
+	@echo "... codebase/datastructure/List.o"
+	@echo "... codebase/datastructure/List.i"
+	@echo "... codebase/datastructure/List.s"
+	@echo "... codebase/datastructure/lock_free_queue.o"
+	@echo "... codebase/datastructure/lock_free_queue.i"
+	@echo "... codebase/datastructure/lock_free_queue.s"
+	@echo "... codebase/design_patterns/singleton.o"
+	@echo "... codebase/design_patterns/singleton.i"
+	@echo "... codebase/design_patterns/singleton.s"
 	@echo "... codebase/random_number/random_number.o"
 	@echo "... codebase/random_number/random_number.i"
 	@echo "... codebase/random_number/random_number.s"
 	@echo "... codebase/utils/utils.o"
 	@echo "... codebase/utils/utils.i"
 	@echo "... codebase/utils/utils.s"
+	@echo "... tests/List_test.o"
+	@echo "... tests/List_test.i"
+	@echo "... tests/List_test.s"
+	@echo "... tests/lock_free_queue_test.o"
+	@echo "... tests/lock_free_queue_test.i"
+	@echo "... tests/lock_free_queue_test.s"
+	@echo "... tests/mmap_test.o"
+	@echo "... tests/mmap_test.i"
+	@echo "... tests/mmap_test.s"
+	@echo "... tests/singleton_test.o"
+	@echo "... tests/singleton_test.i"
+	@echo "... tests/singleton_test.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"

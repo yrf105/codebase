@@ -24,10 +24,14 @@ include_directories(codebase/)
 
 set(LIB_SRC
     codebase/random_number/random_number.cc
-    codebase/utils/utils.cc)
+    codebase/utils/utils.cc
+    codebase/design_patterns/singleton.cc
+    codebase/datastructure/List.cc
+    codebase/datastructure/lock_free_queue.cc)
 
 set(LIBS
-    codebase)
+    codebase
+    pthread)
 
 # 生成动态库
 add_library(codebase SHARED ${LIB_SRC})
@@ -42,7 +46,10 @@ codebase_add_executable(test_function_bind "tests/test_function_bind.cc" codebas
 codebase_add_executable(test_ucontext "tests/test_ucontext.cc" codebase "${LIBS}")
 # codebase_add_executable(test_coroutine "tests/test_coroutine.cc" codebase "${LIBS}")
 codebase_add_executable(test_tuple "tests/test_tuple.cc" codebase "${LIBS}")
-
+codebase_add_executable(singleton_test "tests/singleton_test.cc" codebase "${LIBS}")
+codebase_add_executable(mmap_test "tests/mmap_test.cc" codebase "${LIBS}")
+codebase_add_executable(List_test "tests/List_test.cc" codebase "${LIBS}")
+codebase_add_executable(lock_free_queue_test "tests/lock_free_queue_test.cc" codebase "${LIBS}")
 
 # 指定可执行文件的存放路径
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

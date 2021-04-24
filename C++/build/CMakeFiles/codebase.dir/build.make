@@ -86,19 +86,64 @@ CMakeFiles/codebase.dir/codebase/utils/utils.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/utils/utils.cc.s"
 	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/utils/utils.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/utils/utils.cc -o CMakeFiles/codebase.dir/codebase/utils/utils.cc.s
 
+CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o: CMakeFiles/codebase.dir/flags.make
+CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o: ../codebase/design_patterns/singleton.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o"
+	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/design_patterns/singleton.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/design_patterns/singleton.cc
+
+CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.i"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/design_patterns/singleton.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/design_patterns/singleton.cc > CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.i
+
+CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.s"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/design_patterns/singleton.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/design_patterns/singleton.cc -o CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.s
+
+CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o: CMakeFiles/codebase.dir/flags.make
+CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o: ../codebase/datastructure/List.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o"
+	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/datastructure/List.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/datastructure/List.cc
+
+CMakeFiles/codebase.dir/codebase/datastructure/List.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/datastructure/List.cc.i"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/datastructure/List.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/datastructure/List.cc > CMakeFiles/codebase.dir/codebase/datastructure/List.cc.i
+
+CMakeFiles/codebase.dir/codebase/datastructure/List.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/datastructure/List.cc.s"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/datastructure/List.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/datastructure/List.cc -o CMakeFiles/codebase.dir/codebase/datastructure/List.cc.s
+
+CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o: CMakeFiles/codebase.dir/flags.make
+CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o: ../codebase/datastructure/lock_free_queue.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o"
+	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/datastructure/lock_free_queue.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/datastructure/lock_free_queue.cc
+
+CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.i"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/datastructure/lock_free_queue.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/datastructure/lock_free_queue.cc > CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.i
+
+CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.s"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/datastructure/lock_free_queue.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/datastructure/lock_free_queue.cc -o CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.s
+
 # Object files for target codebase
 codebase_OBJECTS = \
 "CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o" \
-"CMakeFiles/codebase.dir/codebase/utils/utils.cc.o"
+"CMakeFiles/codebase.dir/codebase/utils/utils.cc.o" \
+"CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o" \
+"CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o" \
+"CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o"
 
 # External object files for target codebase
 codebase_EXTERNAL_OBJECTS =
 
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/utils/utils.cc.o
+../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o
+../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o
+../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/build.make
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library ../lib/libcodebase.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library ../lib/libcodebase.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/codebase.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

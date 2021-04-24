@@ -46,12 +46,16 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test_tuple.dir/DependInfo.cmake"
-  "CMakeFiles/test_function_bind.dir/DependInfo.cmake"
-  "CMakeFiles/test_allocator.dir/DependInfo.cmake"
-  "CMakeFiles/test_stl.dir/DependInfo.cmake"
-  "CMakeFiles/test_ucontext.dir/DependInfo.cmake"
-  "CMakeFiles/test_random_number.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
+  "CMakeFiles/test_random_number.dir/DependInfo.cmake"
+  "CMakeFiles/test_ucontext.dir/DependInfo.cmake"
+  "CMakeFiles/test_stl.dir/DependInfo.cmake"
   "CMakeFiles/codebase.dir/DependInfo.cmake"
+  "CMakeFiles/test_allocator.dir/DependInfo.cmake"
+  "CMakeFiles/test_function_bind.dir/DependInfo.cmake"
+  "CMakeFiles/test_tuple.dir/DependInfo.cmake"
+  "CMakeFiles/singleton_test.dir/DependInfo.cmake"
+  "CMakeFiles/mmap_test.dir/DependInfo.cmake"
+  "CMakeFiles/List_test.dir/DependInfo.cmake"
+  "CMakeFiles/lock_free_queue_test.dir/DependInfo.cmake"
   )
