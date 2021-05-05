@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wddxrw/workspace/codebase/C++/codebase/concurrent/examples/managing_thread.cc
+unistd.h
+-
+iostream
+-
+memory
+-
+string
+-
+thread
+-
+vector
+-
+functional
+-
+algorithm
+-
+numeric
+-
+

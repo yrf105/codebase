@@ -12,6 +12,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "../cmake/utils.cmake"
+  "../codebase/concurrent/CMakeLists.txt"
+  "../codebase/concurrent/examples/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -42,6 +44,8 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "codebase/concurrent/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "codebase/concurrent/examples/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -58,4 +62,9 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mmap_test.dir/DependInfo.cmake"
   "CMakeFiles/List_test.dir/DependInfo.cmake"
   "CMakeFiles/lock_free_queue_test.dir/DependInfo.cmake"
+  "codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/DependInfo.cmake"
+  "codebase/concurrent/examples/CMakeFiles/ATM.dir/DependInfo.cmake"
+  "codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/DependInfo.cmake"
+  "codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/DependInfo.cmake"
+  "codebase/concurrent/examples/CMakeFiles/managing_thread.dir/DependInfo.cmake"
   )

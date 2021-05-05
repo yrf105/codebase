@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wddxrw/workspace/codebase/C++/codebase/concurrent/examples/mem_model_and_atomic_type.cc
+atomic
+-
+iostream
+-
+thread
+-
+vector
+-
+

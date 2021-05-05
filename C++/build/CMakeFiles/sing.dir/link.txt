@@ -1,1 +1,0 @@
-/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   CMakeFiles/sing.dir/tests/test_tuple.cc.o  -o ../bin/sing  -Wl,-rpath,/home/wddxrw/workspace/codebase/C++/lib ../lib/libcodebase.so 

@@ -61,6 +61,16 @@
         "variant": "cpp",
         "condition_variable": "cpp",
         "mutex": "cpp",
-        "ciso646": "cpp"
+        "ciso646": "cpp",
+        "cassert": "cpp",
+        "cerrno": "cpp",
+        "cfloat": "cpp",
+        "climits": "cpp",
+        "ios": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "shared_mutex": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp"
     }
 }

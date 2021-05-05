@@ -12,3 +12,12 @@
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/mmap_test.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/List_test.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/lock_free_queue_test.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/CMakeFiles/rebuild_cache.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/CMakeFiles/edit_cache.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/rebuild_cache.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/ATM.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/edit_cache.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir
+/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples/CMakeFiles/managing_thread.dir

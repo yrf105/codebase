@@ -1,1 +1,0 @@
-/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11  -g   CMakeFiles/test_function.dir/tests/test_allocator.cc.o  -o ../bin/test_function  -Wl,-rpath,/home/wddxrw/workspace/codebase/C++/lib ../lib/libcodebase.so 

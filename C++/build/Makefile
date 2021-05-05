@@ -269,6 +269,71 @@ lock_free_queue_test/fast:
 	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/build
 .PHONY : lock_free_queue_test/fast
 
+#=============================================================================
+# Target rules for targets named mem_model_and_atomic_type
+
+# Build rule for target.
+mem_model_and_atomic_type: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mem_model_and_atomic_type
+.PHONY : mem_model_and_atomic_type
+
+# fast build rule for target.
+mem_model_and_atomic_type/fast:
+	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/build.make codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/build
+.PHONY : mem_model_and_atomic_type/fast
+
+#=============================================================================
+# Target rules for targets named ATM
+
+# Build rule for target.
+ATM: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ATM
+.PHONY : ATM
+
+# fast build rule for target.
+ATM/fast:
+	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/ATM.dir/build.make codebase/concurrent/examples/CMakeFiles/ATM.dir/build
+.PHONY : ATM/fast
+
+#=============================================================================
+# Target rules for targets named synchronizing_concurrent_operation
+
+# Build rule for target.
+synchronizing_concurrent_operation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 synchronizing_concurrent_operation
+.PHONY : synchronizing_concurrent_operation
+
+# fast build rule for target.
+synchronizing_concurrent_operation/fast:
+	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/build.make codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/build
+.PHONY : synchronizing_concurrent_operation/fast
+
+#=============================================================================
+# Target rules for targets named sharing_data_between_thread
+
+# Build rule for target.
+sharing_data_between_thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sharing_data_between_thread
+.PHONY : sharing_data_between_thread
+
+# fast build rule for target.
+sharing_data_between_thread/fast:
+	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/build
+.PHONY : sharing_data_between_thread/fast
+
+#=============================================================================
+# Target rules for targets named managing_thread
+
+# Build rule for target.
+managing_thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 managing_thread
+.PHONY : managing_thread
+
+# fast build rule for target.
+managing_thread/fast:
+	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build
+.PHONY : managing_thread/fast
+
 codebase/datastructure/List.o: codebase/datastructure/List.cc.o
 
 .PHONY : codebase/datastructure/List.o
@@ -721,6 +786,11 @@ help:
 	@echo "... mmap_test"
 	@echo "... List_test"
 	@echo "... lock_free_queue_test"
+	@echo "... mem_model_and_atomic_type"
+	@echo "... ATM"
+	@echo "... synchronizing_concurrent_operation"
+	@echo "... sharing_data_between_thread"
+	@echo "... managing_thread"
 	@echo "... codebase/datastructure/List.o"
 	@echo "... codebase/datastructure/List.i"
 	@echo "... codebase/datastructure/List.s"

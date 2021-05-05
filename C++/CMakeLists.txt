@@ -8,7 +8,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 #判断编译器类型,如果是gcc编译器,则在编译选项中加入c++11支持
 if(CMAKE_COMPILER_IS_GNUCXX)
-    set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11 ${CMAKE_CXX_FLAGS}")
+    set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a ${CMAKE_CXX_FLAGS}")
     # message(STATUS "optional:-std=c++11")   
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
@@ -56,3 +56,5 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 # 指定输出库的存放路径
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+add_subdirectory(codebase/concurrent)

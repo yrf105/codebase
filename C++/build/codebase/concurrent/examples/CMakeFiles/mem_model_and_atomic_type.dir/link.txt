@@ -1,0 +1,1 @@
+/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g   CMakeFiles/mem_model_and_atomic_type.dir/mem_model_and_atomic_type.cc.o  -o ../../../../bin/mem_model_and_atomic_type  -lpthread -latomic 

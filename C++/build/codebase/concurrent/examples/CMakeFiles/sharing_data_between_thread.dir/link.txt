@@ -1,0 +1,1 @@
+/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g   CMakeFiles/sharing_data_between_thread.dir/sharing_data_between_thread.cc.o  -o ../../../../bin/sharing_data_between_thread  -lpthread 
