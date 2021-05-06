@@ -62,6 +62,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mmap_test.dir/DependInfo.cmake"
   "CMakeFiles/List_test.dir/DependInfo.cmake"
   "CMakeFiles/lock_free_queue_test.dir/DependInfo.cmake"
+  "CMakeFiles/test_virtual_func.dir/DependInfo.cmake"
   "codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/DependInfo.cmake"
   "codebase/concurrent/examples/CMakeFiles/ATM.dir/DependInfo.cmake"
   "codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/DependInfo.cmake"

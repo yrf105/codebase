@@ -50,6 +50,7 @@ codebase_add_executable(singleton_test "tests/singleton_test.cc" codebase "${LIB
 codebase_add_executable(mmap_test "tests/mmap_test.cc" codebase "${LIBS}")
 codebase_add_executable(List_test "tests/List_test.cc" codebase "${LIBS}")
 codebase_add_executable(lock_free_queue_test "tests/lock_free_queue_test.cc" codebase "${LIBS}")
+codebase_add_executable(test_virtual_func "tests/test_virtual_func.cc" codebase "${LIBS}")
 
 # 指定可执行文件的存放路径
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

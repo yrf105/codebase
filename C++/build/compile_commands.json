@@ -80,6 +80,11 @@
   "file": "/home/wddxrw/workspace/codebase/C++/tests/lock_free_queue_test.cc"
 },
 {
+  "directory": "/home/wddxrw/workspace/codebase/C++/build",
+  "command": "/bin/g++-9   -D__FILE__=\\\"tests/test_virtual_func.cc\\\" -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g   -o CMakeFiles/test_virtual_func.dir/tests/test_virtual_func.cc.o -c /home/wddxrw/workspace/codebase/C++/tests/test_virtual_func.cc",
+  "file": "/home/wddxrw/workspace/codebase/C++/tests/test_virtual_func.cc"
+},
+{
   "directory": "/home/wddxrw/workspace/codebase/C++/build/codebase/concurrent/examples",
   "command": "/bin/g++-9   -I/home/wddxrw/workspace/codebase/C++/codebase   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g   -o CMakeFiles/mem_model_and_atomic_type.dir/mem_model_and_atomic_type.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/concurrent/examples/mem_model_and_atomic_type.cc",
   "file": "/home/wddxrw/workspace/codebase/C++/codebase/concurrent/examples/mem_model_and_atomic_type.cc"

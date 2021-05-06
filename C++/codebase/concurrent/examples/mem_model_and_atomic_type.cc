@@ -88,10 +88,10 @@ static void test4() {
     
     std::atomic<bool> x(true);
     x = false;
-    bool y = x.load(std::memory_order_acquire);
+    // bool y = x.load(std::memory_order_acquire);
     x.store(true);
 
-    y = x.exchange(false, std::memory_order_acq_rel);
+    // y = x.exchange(false, std::memory_order_acq_rel);
 
     std::cout << x.is_lock_free() << std::endl;
 }

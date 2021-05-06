@@ -270,6 +270,19 @@ lock_free_queue_test/fast:
 .PHONY : lock_free_queue_test/fast
 
 #=============================================================================
+# Target rules for targets named test_virtual_func
+
+# Build rule for target.
+test_virtual_func: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_virtual_func
+.PHONY : test_virtual_func
+
+# fast build rule for target.
+test_virtual_func/fast:
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/build
+.PHONY : test_virtual_func/fast
+
+#=============================================================================
 # Target rules for targets named mem_model_and_atomic_type
 
 # Build rule for target.
@@ -766,15 +779,42 @@ tests/test_ucontext.cc.s:
 	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/tests/test_ucontext.cc.s
 .PHONY : tests/test_ucontext.cc.s
 
+tests/test_virtual_func.o: tests/test_virtual_func.cc.o
+
+.PHONY : tests/test_virtual_func.o
+
+# target to build an object file
+tests/test_virtual_func.cc.o:
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/tests/test_virtual_func.cc.o
+.PHONY : tests/test_virtual_func.cc.o
+
+tests/test_virtual_func.i: tests/test_virtual_func.cc.i
+
+.PHONY : tests/test_virtual_func.i
+
+# target to preprocess a source file
+tests/test_virtual_func.cc.i:
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/tests/test_virtual_func.cc.i
+.PHONY : tests/test_virtual_func.cc.i
+
+tests/test_virtual_func.s: tests/test_virtual_func.cc.s
+
+.PHONY : tests/test_virtual_func.s
+
+# target to generate assembly for a file
+tests/test_virtual_func.cc.s:
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/tests/test_virtual_func.cc.s
+.PHONY : tests/test_virtual_func.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... test_random_number"
 	@echo "... test_ucontext"
 	@echo "... test_stl"
@@ -786,6 +826,7 @@ help:
 	@echo "... mmap_test"
 	@echo "... List_test"
 	@echo "... lock_free_queue_test"
+	@echo "... test_virtual_func"
 	@echo "... mem_model_and_atomic_type"
 	@echo "... ATM"
 	@echo "... synchronizing_concurrent_operation"
@@ -839,6 +880,9 @@ help:
 	@echo "... tests/test_ucontext.o"
 	@echo "... tests/test_ucontext.i"
 	@echo "... tests/test_ucontext.s"
+	@echo "... tests/test_virtual_func.o"
+	@echo "... tests/test_virtual_func.i"
+	@echo "... tests/test_virtual_func.s"
 .PHONY : help
 
 

@@ -68,6 +68,7 @@ all: CMakeFiles/singleton_test.dir/all
 all: CMakeFiles/mmap_test.dir/all
 all: CMakeFiles/List_test.dir/all
 all: CMakeFiles/lock_free_queue_test.dir/all
+all: CMakeFiles/test_virtual_func.dir/all
 all: codebase/concurrent/all
 
 .PHONY : all
@@ -90,6 +91,7 @@ clean: CMakeFiles/singleton_test.dir/clean
 clean: CMakeFiles/mmap_test.dir/clean
 clean: CMakeFiles/List_test.dir/clean
 clean: CMakeFiles/lock_free_queue_test.dir/clean
+clean: CMakeFiles/test_virtual_func.dir/clean
 clean: codebase/concurrent/clean
 
 .PHONY : clean
@@ -461,6 +463,33 @@ lock_free_queue_test: CMakeFiles/lock_free_queue_test.dir/rule
 CMakeFiles/lock_free_queue_test.dir/clean:
 	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/clean
 .PHONY : CMakeFiles/lock_free_queue_test.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_virtual_func.dir
+
+# All Build rule for target.
+CMakeFiles/test_virtual_func.dir/all: CMakeFiles/codebase.dir/all
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/depend
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=39,40 "Built target test_virtual_func"
+.PHONY : CMakeFiles/test_virtual_func.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_virtual_func.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_virtual_func.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_virtual_func.dir/rule
+
+# Convenience name for target.
+test_virtual_func: CMakeFiles/test_virtual_func.dir/rule
+
+.PHONY : test_virtual_func
+
+# clean rule for target.
+CMakeFiles/test_virtual_func.dir/clean:
+	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/clean
+.PHONY : CMakeFiles/test_virtual_func.dir/clean
 
 #=============================================================================
 # Target rules for target codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir
