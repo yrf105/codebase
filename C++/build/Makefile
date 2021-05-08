@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_String
+
+# Build rule for target.
+test_String: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_String
+.PHONY : test_String
+
+# fast build rule for target.
+test_String/fast:
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/build
+.PHONY : test_String/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -347,32 +360,59 @@ managing_thread/fast:
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build
 .PHONY : managing_thread/fast
 
-codebase/datastructure/List.o: codebase/datastructure/List.cc.o
+codebase/STL/List.o: codebase/STL/List.cc.o
 
-.PHONY : codebase/datastructure/List.o
+.PHONY : codebase/STL/List.o
 
 # target to build an object file
-codebase/datastructure/List.cc.o:
-	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o
-.PHONY : codebase/datastructure/List.cc.o
+codebase/STL/List.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/List.cc.o
+.PHONY : codebase/STL/List.cc.o
 
-codebase/datastructure/List.i: codebase/datastructure/List.cc.i
+codebase/STL/List.i: codebase/STL/List.cc.i
 
-.PHONY : codebase/datastructure/List.i
+.PHONY : codebase/STL/List.i
 
 # target to preprocess a source file
-codebase/datastructure/List.cc.i:
-	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/List.cc.i
-.PHONY : codebase/datastructure/List.cc.i
+codebase/STL/List.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/List.cc.i
+.PHONY : codebase/STL/List.cc.i
 
-codebase/datastructure/List.s: codebase/datastructure/List.cc.s
+codebase/STL/List.s: codebase/STL/List.cc.s
 
-.PHONY : codebase/datastructure/List.s
+.PHONY : codebase/STL/List.s
 
 # target to generate assembly for a file
-codebase/datastructure/List.cc.s:
-	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/datastructure/List.cc.s
-.PHONY : codebase/datastructure/List.cc.s
+codebase/STL/List.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/List.cc.s
+.PHONY : codebase/STL/List.cc.s
+
+codebase/STL/String.o: codebase/STL/String.cc.o
+
+.PHONY : codebase/STL/String.o
+
+# target to build an object file
+codebase/STL/String.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/String.cc.o
+.PHONY : codebase/STL/String.cc.o
+
+codebase/STL/String.i: codebase/STL/String.cc.i
+
+.PHONY : codebase/STL/String.i
+
+# target to preprocess a source file
+codebase/STL/String.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/String.cc.i
+.PHONY : codebase/STL/String.cc.i
+
+codebase/STL/String.s: codebase/STL/String.cc.s
+
+.PHONY : codebase/STL/String.s
+
+# target to generate assembly for a file
+codebase/STL/String.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/String.cc.s
+.PHONY : codebase/STL/String.cc.s
 
 codebase/datastructure/lock_free_queue.o: codebase/datastructure/lock_free_queue.cc.o
 
@@ -617,6 +657,33 @@ tests/test.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.s
 .PHONY : tests/test.cc.s
 
+tests/test_String.o: tests/test_String.cc.o
+
+.PHONY : tests/test_String.o
+
+# target to build an object file
+tests/test_String.cc.o:
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/tests/test_String.cc.o
+.PHONY : tests/test_String.cc.o
+
+tests/test_String.i: tests/test_String.cc.i
+
+.PHONY : tests/test_String.i
+
+# target to preprocess a source file
+tests/test_String.cc.i:
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/tests/test_String.cc.i
+.PHONY : tests/test_String.cc.i
+
+tests/test_String.s: tests/test_String.cc.s
+
+.PHONY : tests/test_String.s
+
+# target to generate assembly for a file
+tests/test_String.cc.s:
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/tests/test_String.cc.s
+.PHONY : tests/test_String.cc.s
+
 tests/test_allocator.o: tests/test_allocator.cc.o
 
 .PHONY : tests/test_allocator.o
@@ -814,6 +881,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test_String"
 	@echo "... test"
 	@echo "... test_random_number"
 	@echo "... test_ucontext"
@@ -832,9 +900,12 @@ help:
 	@echo "... synchronizing_concurrent_operation"
 	@echo "... sharing_data_between_thread"
 	@echo "... managing_thread"
-	@echo "... codebase/datastructure/List.o"
-	@echo "... codebase/datastructure/List.i"
-	@echo "... codebase/datastructure/List.s"
+	@echo "... codebase/STL/List.o"
+	@echo "... codebase/STL/List.i"
+	@echo "... codebase/STL/List.s"
+	@echo "... codebase/STL/String.o"
+	@echo "... codebase/STL/String.i"
+	@echo "... codebase/STL/String.s"
 	@echo "... codebase/datastructure/lock_free_queue.o"
 	@echo "... codebase/datastructure/lock_free_queue.i"
 	@echo "... codebase/datastructure/lock_free_queue.s"
@@ -862,6 +933,9 @@ help:
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_String.o"
+	@echo "... tests/test_String.i"
+	@echo "... tests/test_String.s"
 	@echo "... tests/test_allocator.o"
 	@echo "... tests/test_allocator.i"
 	@echo "... tests/test_allocator.s"

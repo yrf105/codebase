@@ -6,3 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/home/wddxrw/workspace/codebase/C++/codebase/STL/List.cc
+List.h
+/home/wddxrw/workspace/codebase/C++/codebase/STL/List.h
+
+/home/wddxrw/workspace/codebase/C++/codebase/STL/List.h
+iostream
+-
+sstream
+-
+

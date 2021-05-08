@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wddxrw/workspace/codebase/C++/tests/test.cc
+iostream
+-
+functional
+-
+algorithm
+-
+boost/functional/hash/hash.hpp
+-
+

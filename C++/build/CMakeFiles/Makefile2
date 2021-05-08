@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = /home/wddxrw/workspace/codebase/C++/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_String.dir/all
 all: CMakeFiles/test.dir/all
 all: CMakeFiles/test_random_number.dir/all
 all: CMakeFiles/test_ucontext.dir/all
@@ -79,6 +80,7 @@ preinstall: codebase/concurrent/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_String.dir/clean
 clean: CMakeFiles/test.dir/clean
 clean: CMakeFiles/test_random_number.dir/clean
 clean: CMakeFiles/test_ucontext.dir/clean
@@ -141,18 +143,45 @@ codebase/concurrent/examples/clean: codebase/concurrent/examples/CMakeFiles/mana
 .PHONY : codebase/concurrent/examples/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_String.dir
+
+# All Build rule for target.
+CMakeFiles/test_String.dir/all: CMakeFiles/codebase.dir/all
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/depend
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=28,29 "Built target test_String"
+.PHONY : CMakeFiles/test_String.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_String.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_String.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_String.dir/rule
+
+# Convenience name for target.
+test_String: CMakeFiles/test_String.dir/rule
+
+.PHONY : test_String
+
+# clean rule for target.
+CMakeFiles/test_String.dir/clean:
+	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/clean
+.PHONY : CMakeFiles/test_String.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
 CMakeFiles/test.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=25,26 "Built target test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=26,27 "Built target test"
 .PHONY : CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test.dir/rule
@@ -174,12 +203,12 @@ CMakeFiles/test.dir/clean:
 CMakeFiles/test_random_number.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_random_number.dir/build.make CMakeFiles/test_random_number.dir/depend
 	$(MAKE) -f CMakeFiles/test_random_number.dir/build.make CMakeFiles/test_random_number.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=31,32 "Built target test_random_number"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=34,35 "Built target test_random_number"
 .PHONY : CMakeFiles/test_random_number.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_random_number.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_random_number.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_random_number.dir/rule
@@ -201,12 +230,12 @@ CMakeFiles/test_random_number.dir/clean:
 CMakeFiles/test_ucontext.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/depend
 	$(MAKE) -f CMakeFiles/test_ucontext.dir/build.make CMakeFiles/test_ucontext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=37,38 "Built target test_ucontext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=40,41 "Built target test_ucontext"
 .PHONY : CMakeFiles/test_ucontext.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_ucontext.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_ucontext.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_ucontext.dir/rule
@@ -228,12 +257,12 @@ CMakeFiles/test_ucontext.dir/clean:
 CMakeFiles/test_stl.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/depend
 	$(MAKE) -f CMakeFiles/test_stl.dir/build.make CMakeFiles/test_stl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=33,34 "Built target test_stl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=36,37 "Built target test_stl"
 .PHONY : CMakeFiles/test_stl.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_stl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_stl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_stl.dir/rule
@@ -255,12 +284,12 @@ CMakeFiles/test_stl.dir/clean:
 CMakeFiles/codebase.dir/all:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/depend
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=5,6,7,8,9,10 "Built target codebase"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=5,6,7,8,9,10,11 "Built target codebase"
 .PHONY : CMakeFiles/codebase.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/codebase.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/codebase.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/codebase.dir/rule
@@ -282,12 +311,12 @@ CMakeFiles/codebase.dir/clean:
 CMakeFiles/test_allocator.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/depend
 	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=27,28 "Built target test_allocator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=30,31 "Built target test_allocator"
 .PHONY : CMakeFiles/test_allocator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_allocator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_allocator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_allocator.dir/rule
@@ -309,12 +338,12 @@ CMakeFiles/test_allocator.dir/clean:
 CMakeFiles/test_function_bind.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/depend
 	$(MAKE) -f CMakeFiles/test_function_bind.dir/build.make CMakeFiles/test_function_bind.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=29,30 "Built target test_function_bind"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=32,33 "Built target test_function_bind"
 .PHONY : CMakeFiles/test_function_bind.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_function_bind.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_function_bind.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_function_bind.dir/rule
@@ -336,12 +365,12 @@ CMakeFiles/test_function_bind.dir/clean:
 CMakeFiles/test_tuple.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/depend
 	$(MAKE) -f CMakeFiles/test_tuple.dir/build.make CMakeFiles/test_tuple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=35,36 "Built target test_tuple"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=38,39 "Built target test_tuple"
 .PHONY : CMakeFiles/test_tuple.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_tuple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_tuple.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_tuple.dir/rule
@@ -363,12 +392,12 @@ CMakeFiles/test_tuple.dir/clean:
 CMakeFiles/singleton_test.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/singleton_test.dir/build.make CMakeFiles/singleton_test.dir/depend
 	$(MAKE) -f CMakeFiles/singleton_test.dir/build.make CMakeFiles/singleton_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=21,22 "Built target singleton_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=22,23 "Built target singleton_test"
 .PHONY : CMakeFiles/singleton_test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/singleton_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/singleton_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/singleton_test.dir/rule
@@ -390,12 +419,12 @@ CMakeFiles/singleton_test.dir/clean:
 CMakeFiles/mmap_test.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/depend
 	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=17,18 "Built target mmap_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=18,19 "Built target mmap_test"
 .PHONY : CMakeFiles/mmap_test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mmap_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mmap_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/mmap_test.dir/rule
@@ -422,7 +451,7 @@ CMakeFiles/List_test.dir/all: CMakeFiles/codebase.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/List_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/List_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/List_test.dir/rule
@@ -444,12 +473,12 @@ CMakeFiles/List_test.dir/clean:
 CMakeFiles/lock_free_queue_test.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/depend
 	$(MAKE) -f CMakeFiles/lock_free_queue_test.dir/build.make CMakeFiles/lock_free_queue_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=11,12 "Built target lock_free_queue_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=12,13 "Built target lock_free_queue_test"
 .PHONY : CMakeFiles/lock_free_queue_test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lock_free_queue_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lock_free_queue_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/lock_free_queue_test.dir/rule
@@ -471,12 +500,12 @@ CMakeFiles/lock_free_queue_test.dir/clean:
 CMakeFiles/test_virtual_func.dir/all: CMakeFiles/codebase.dir/all
 	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/depend
 	$(MAKE) -f CMakeFiles/test_virtual_func.dir/build.make CMakeFiles/test_virtual_func.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=39,40 "Built target test_virtual_func"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=42,43 "Built target test_virtual_func"
 .PHONY : CMakeFiles/test_virtual_func.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_virtual_func.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_virtual_func.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wddxrw/workspace/codebase/C++/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_virtual_func.dir/rule
@@ -498,7 +527,7 @@ CMakeFiles/test_virtual_func.dir/clean:
 codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/all:
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/build.make codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/depend
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/build.make codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=15,16 "Built target mem_model_and_atomic_type"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=16,17 "Built target mem_model_and_atomic_type"
 .PHONY : codebase/concurrent/examples/CMakeFiles/mem_model_and_atomic_type.dir/all
 
 # Build rule for subdir invocation for target.
@@ -552,7 +581,7 @@ codebase/concurrent/examples/CMakeFiles/ATM.dir/clean:
 codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/all:
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/build.make codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/depend
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/build.make codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=23,24 "Built target synchronizing_concurrent_operation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=24,25 "Built target synchronizing_concurrent_operation"
 .PHONY : codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/all
 
 # Build rule for subdir invocation for target.
@@ -579,7 +608,7 @@ codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/c
 codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/all:
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/depend
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=19,20 "Built target sharing_data_between_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=20,21 "Built target sharing_data_between_thread"
 .PHONY : codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/all
 
 # Build rule for subdir invocation for target.
@@ -606,7 +635,7 @@ codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/clean:
 codebase/concurrent/examples/CMakeFiles/managing_thread.dir/all:
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/managing_thread.dir/depend
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=13,14 "Built target managing_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=14,15 "Built target managing_thread"
 .PHONY : codebase/concurrent/examples/CMakeFiles/managing_thread.dir/all
 
 # Build rule for subdir invocation for target.

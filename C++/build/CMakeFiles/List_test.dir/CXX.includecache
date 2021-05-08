@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../codebase/datastructure/List.h
+../codebase/STL/List.h
 iostream
 -
 sstream
@@ -23,8 +23,8 @@ string
 -
 
 /home/wddxrw/workspace/codebase/C++/tests/List_test.cc
-datastructure/List.h
-/home/wddxrw/workspace/codebase/C++/tests/datastructure/List.h
+STL/List.h
+/home/wddxrw/workspace/codebase/C++/tests/STL/List.h
 utils/utils.h
 /home/wddxrw/workspace/codebase/C++/tests/utils/utils.h
 string

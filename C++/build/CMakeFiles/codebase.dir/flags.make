@@ -14,7 +14,9 @@ CXX_INCLUDES = -I/home/wddxrw/workspace/codebase/C++/codebase
 
 # Custom defines: CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o_DEFINES = __FILE__="codebase/design_patterns/singleton.cc"
 
-# Custom defines: CMakeFiles/codebase.dir/codebase/datastructure/List.cc.o_DEFINES = __FILE__="codebase/datastructure/List.cc"
+# Custom defines: CMakeFiles/codebase.dir/codebase/STL/List.cc.o_DEFINES = __FILE__="codebase/STL/List.cc"
 
 # Custom defines: CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o_DEFINES = __FILE__="codebase/datastructure/lock_free_queue.cc"
+
+# Custom defines: CMakeFiles/codebase.dir/codebase/STL/String.cc.o_DEFINES = __FILE__="codebase/STL/String.cc"
 

@@ -1,4 +1,4 @@
-#include "datastructure/List.h"
+#include "STL/List.h"
 #include "utils/utils.h"
 
 #include <string>
@@ -67,21 +67,41 @@ static void test_threads2(codebase::List<int>* l) {
     }
 }
 
+static void test_swap() {
+    codebase::List<std::string> l1;
+    l1.push_back("1");
+    l1.push_back("2");
+    codebase::List<std::string> l2;
+    l2.push_back("!");
+    l2.push_back("@");
+    l1.swap(l2);
+
+    std::cout << l1.toString() << std::endl;
+    std::cout << l2.toString() << std::endl;
+
+    l1 = l2;
+    l1.push_back("3");
+    std::cout << l1.toString() << std::endl;
+    std::cout << l2.toString() << std::endl;
+}
+
 int main(int argc, char** argv) {
-    codebase::CodeTimer ct;
-    // test();
-    // test1();
-    codebase::List<int>* l = new codebase::List<int>;
-    ct.start();
+    // codebase::CodeTimer ct;
+    // // test();
+    // // test1();
+    // codebase::List<int>* l = new codebase::List<int>;
+    // ct.start();
 
-    std::thread t1(std::bind(test_threads1, l));
-    std::thread t2(std::bind(test_threads2, l));
-    t1.join();
-    t2.join();
+    // std::thread t1(std::bind(test_threads1, l));
+    // std::thread t2(std::bind(test_threads2, l));
+    // t1.join();
+    // t2.join();
 
-    std::cout << ct.stop() << std::endl;
+    // std::cout << ct.stop() << std::endl;
 
     // std::cout << l->toString() << std::endl;
+
+    test_swap();
 
     return 0;
 }
