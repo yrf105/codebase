@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../codebase/STL/Vector.h
+iostream
+-
+memory
+-
+sstream
+-
+
+/home/wddxrw/workspace/codebase/C++/tests/test_Vector.cc
+STL/Vector.h
+/home/wddxrw/workspace/codebase/C++/tests/STL/Vector.h
+iostream
+-
+

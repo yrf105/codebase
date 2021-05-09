@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 38,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
@@ -40,8 +40,14 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 39,
+				"line" : 40,
 				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 3
 			},
 			{
 				"command" : 2,
@@ -262,6 +268,36 @@
 			[
 				5
 			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g -fPIC  "
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 10,
+					"define" : "__FILE__=\"codebase/STL/Vector.cc\""
+				},
+				{
+					"define" : "codebase_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/wddxrw/workspace/codebase/C++/codebase"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				6
+			]
 		}
 	],
 	"id" : "codebase::@6890427a1f51a3e7e1df",
@@ -294,7 +330,8 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6
 			]
 		}
 	],
@@ -334,6 +371,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 5,
 			"path" : "codebase/STL/String.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 6,
+			"path" : "codebase/STL/Vector.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

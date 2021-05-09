@@ -4,158 +4,118 @@
 #include <iostream>
 #include <sstream>
 
+#include "ListNode.h"
+#include "ListIteraor.h"
+
 namespace codebase {
 
-template <typename T>
-struct ListNode {
-    ListNode();
-    ListNode(const T& val);
-
-    T value;
-    ListNode* next;
-};
-
-template <typename T>
+template <typename T, typename Alloc>
 class List {
 public:
-    List();
-    List(const List<T>& rhs);
-    List& operator= (List rhs);
-    ~List();
+    using allocator_type = Alloc;
+    using value_type = typename Alloc::value_type;
+    using size_type = typename Alloc::size_type;
+    using difference_type = typename Alloc::difference_type;
+    using pointer = typename Alloc::pointer;
+    using const_pointer = typename Alloc::pointer;
+    using reference = typename Alloc::reference;
+    using const_reference = typename Alloc::const_reference;
+    using list_type = List<T, Alloc>;
+    using iterator = ListIterator<list_type, pointer, reference>;
+    using const_iterator = ListIterator<list_type, const_pointer, const_reference>;
 
-    size_t size() const;
-    bool empty() const;
-    void push_back(const T& val);
-    void pop_back();
-    void push_front(const T& val);
-    void pop_front();
-    void clear();
-    void swap(List<T>&);
+    using node = ListNode<value_type>;
+    using node_pointer = ListNode<value_type>*;
 
-    std::string toString() const;
+    explicit List(const allocator_type& alloc = allocator_type()) : allocator_(alloc) { init(); }
+    List(const list_type& rhs);
+    list_type& operator= (list_type rhs) {
+        swap(rhs);
+        return *this;
+    }
+    ~List() {
+        delete head_;
+    }
+
+    void push_back(const_reference val) {
+        node_pointer new_node = create_node(val);
+        tail_->next_ = new_node;
+        tail_ = tail_->next_;
+        ++size_;
+    }
+
+    iterator make_iterator(node_pointer np) {
+        return iterator(np);
+    }
+
+    iterator begin() {
+        return make_iterator(head_->next_);
+    }
+
+    // iterator end() {
+    //     return make_iterator(tail_->next_);
+    // }
+
+    void swap(list_type& rhs) {
+        std::swap(size_, rhs.size_);
+        std::swap(head_, rhs.head_);
+        std::swap(tail_, rhs.tail_);
+    }
+
+    size_type size() const {
+        return size_;
+    }
+
+    std::string toString(char sep = ' ') const {
+        if (head_ == tail_) {
+            return "[]";
+        }
+
+        std::stringstream ss;
+        ss << '[';
+        node_pointer curr = head_->next_;
+        while (curr != tail_) {
+            ss << curr->value_ << ' ';
+            curr = curr->next_;
+        }
+
+        ss << curr->value_ << ']';
+
+        return ss.str();
+    }
+
 private:
-    ListNode<T>* head_;
-    ListNode<T>* tail_;
-    size_t size_;
+    void init() {
+        head_ = create_node(value_type{});
+        tail_ = head_;
+        size_ = 0;
+    }
+
+    node_pointer create_node(const_reference element) {
+        // auto new_element = allocator_.allocate(1);
+        // allocator_.construct(new_element, element);
+        // std::cout << *new_element << std::endl;
+        auto new_node = new node(element, nullptr);
+        // auto new_node = static_cast<node_pointer>(new_element);
+        return new_node;
+    }
+
+private:
+    size_type size_;
+    node_pointer head_;
+    node_pointer tail_;
+    allocator_type allocator_;
 };
 
-template <typename T>
-ListNode<T>::ListNode() : value(T()), next(nullptr) {
-
-}
-
-template <typename T>
-ListNode<T>::ListNode(const T& val) : value(val), next(nullptr) {
-
-}
-
-template <typename T>
-List<T>::List() : size_(0) {
-    head_ = new ListNode<T>;
-    tail_ = head_;
-}
-
-template <typename T>
-List<T>::List(const List<T>& rhs) : head_(rhs.head_), tail_(rhs.tail_), size_(rhs.size_) {
-
-}
-
-template <typename T>
-List<T>& List<T>::operator= (List rhs) {
-    swap(rhs);
-    return *this;
-}
-
-template <typename T>
-List<T>::~List() {
-    clear();
-    delete head_;
-}
-
-template <typename T>
-size_t List<T>::size() const {
-    return size_;
-}
-
-template <typename T>
-bool List<T>::empty() const {
-    return size_ == 0;
-}
-
-template <typename T>
-void List<T>::push_back(const T& val) {
-    ListNode<T>* node = new ListNode<T>(val);
-    tail_->next = node;
-    tail_ = tail_->next;
-    ++size_;
-}
-
-template <typename T>
-void List<T>::pop_back() {
-    ListNode<T>* p = head_;
-    while (p->next != tail_) {
-        p = p->next;
-    }
-    delete tail_;
-    tail_ = p;
-    --size_;
-    tail_->next = nullptr;
-}
-
-template <typename T>
-void List<T>::push_front(const T& val) {
-    ListNode<T>* node = new ListNode<T>(val);
-    node->next = head_->next;
-    head_->next = node;
-    ++size_;
-}
-
-template <typename T>
-void List<T>::pop_front() {
-    ListNode<T>* p = head_->next;
-    head_->next = p->next;
-    --size_;
-    delete p;
-}
-
-template <typename T>
-void List<T>::clear() {
-    ListNode<T>* curr = head_->next;
+template <typename T, typename Alloc>
+List<T, Alloc>::List(const list_type& rhs) : List<T, Alloc>() {
+    node_pointer curr = rhs.head_->next_;
     while (curr) {
-        head_->next = curr->next;
-        delete curr;
-        --size_;
-        curr = head_->next;
+        push_back(curr->value_);
+        curr = curr->next_;
     }
-    tail_ = head_;
 }
 
-template <typename T>
-void List<T>::swap(List<T>& rhs) {
-    std::swap(head_, rhs.head_);
-    std::swap(tail_, rhs.tail_);
-    std::swap(size_, rhs.size_);
-}
-
-
-template <typename T>
-std::string List<T>::toString() const {
-    std::stringstream ss;
-    ss << "[";
-    ListNode<T>* p = head_->next;
-    if (p) {
-        ss << p->value;
-        p = p->next;
-    }
-
-    while (p) {
-        ss << "," << p->value;
-        p = p->next;
-    }
-    ss << "]";
-
-    return ss.str();
-}
 } // namespace codebase
 
 #endif // CODEBASE_DS_LIST_H_

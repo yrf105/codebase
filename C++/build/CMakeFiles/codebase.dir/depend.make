@@ -3,9 +3,14 @@
 
 CMakeFiles/codebase.dir/codebase/STL/List.cc.o: ../codebase/STL/List.cc
 CMakeFiles/codebase.dir/codebase/STL/List.cc.o: ../codebase/STL/List.h
+CMakeFiles/codebase.dir/codebase/STL/List.cc.o: ../codebase/STL/ListIteraor.h
+CMakeFiles/codebase.dir/codebase/STL/List.cc.o: ../codebase/STL/ListNode.h
 
 CMakeFiles/codebase.dir/codebase/STL/String.cc.o: ../codebase/STL/String.cc
 CMakeFiles/codebase.dir/codebase/STL/String.cc.o: ../codebase/STL/String.h
+
+CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o: ../codebase/STL/Vector.cc
+CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o: ../codebase/STL/Vector.h
 
 CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o: ../codebase/datastructure/lock_free_queue.cc
 CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o: ../codebase/datastructure/lock_free_queue.h

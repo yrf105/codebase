@@ -53,6 +53,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_String.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/test_random_number.dir/DependInfo.cmake"
+  "CMakeFiles/test_Vector.dir/DependInfo.cmake"
   "CMakeFiles/test_ucontext.dir/DependInfo.cmake"
   "CMakeFiles/test_stl.dir/DependInfo.cmake"
   "CMakeFiles/codebase.dir/DependInfo.cmake"

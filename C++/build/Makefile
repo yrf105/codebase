@@ -153,6 +153,19 @@ test_random_number/fast:
 .PHONY : test_random_number/fast
 
 #=============================================================================
+# Target rules for targets named test_Vector
+
+# Build rule for target.
+test_Vector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_Vector
+.PHONY : test_Vector
+
+# fast build rule for target.
+test_Vector/fast:
+	$(MAKE) -f CMakeFiles/test_Vector.dir/build.make CMakeFiles/test_Vector.dir/build
+.PHONY : test_Vector/fast
+
+#=============================================================================
 # Target rules for targets named test_ucontext
 
 # Build rule for target.
@@ -413,6 +426,33 @@ codebase/STL/String.s: codebase/STL/String.cc.s
 codebase/STL/String.cc.s:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/String.cc.s
 .PHONY : codebase/STL/String.cc.s
+
+codebase/STL/Vector.o: codebase/STL/Vector.cc.o
+
+.PHONY : codebase/STL/Vector.o
+
+# target to build an object file
+codebase/STL/Vector.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o
+.PHONY : codebase/STL/Vector.cc.o
+
+codebase/STL/Vector.i: codebase/STL/Vector.cc.i
+
+.PHONY : codebase/STL/Vector.i
+
+# target to preprocess a source file
+codebase/STL/Vector.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/Vector.cc.i
+.PHONY : codebase/STL/Vector.cc.i
+
+codebase/STL/Vector.s: codebase/STL/Vector.cc.s
+
+.PHONY : codebase/STL/Vector.s
+
+# target to generate assembly for a file
+codebase/STL/Vector.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/Vector.cc.s
+.PHONY : codebase/STL/Vector.cc.s
 
 codebase/datastructure/lock_free_queue.o: codebase/datastructure/lock_free_queue.cc.o
 
@@ -684,6 +724,33 @@ tests/test_String.cc.s:
 	$(MAKE) -f CMakeFiles/test_String.dir/build.make CMakeFiles/test_String.dir/tests/test_String.cc.s
 .PHONY : tests/test_String.cc.s
 
+tests/test_Vector.o: tests/test_Vector.cc.o
+
+.PHONY : tests/test_Vector.o
+
+# target to build an object file
+tests/test_Vector.cc.o:
+	$(MAKE) -f CMakeFiles/test_Vector.dir/build.make CMakeFiles/test_Vector.dir/tests/test_Vector.cc.o
+.PHONY : tests/test_Vector.cc.o
+
+tests/test_Vector.i: tests/test_Vector.cc.i
+
+.PHONY : tests/test_Vector.i
+
+# target to preprocess a source file
+tests/test_Vector.cc.i:
+	$(MAKE) -f CMakeFiles/test_Vector.dir/build.make CMakeFiles/test_Vector.dir/tests/test_Vector.cc.i
+.PHONY : tests/test_Vector.cc.i
+
+tests/test_Vector.s: tests/test_Vector.cc.s
+
+.PHONY : tests/test_Vector.s
+
+# target to generate assembly for a file
+tests/test_Vector.cc.s:
+	$(MAKE) -f CMakeFiles/test_Vector.dir/build.make CMakeFiles/test_Vector.dir/tests/test_Vector.cc.s
+.PHONY : tests/test_Vector.cc.s
+
 tests/test_allocator.o: tests/test_allocator.cc.o
 
 .PHONY : tests/test_allocator.o
@@ -884,6 +951,7 @@ help:
 	@echo "... test_String"
 	@echo "... test"
 	@echo "... test_random_number"
+	@echo "... test_Vector"
 	@echo "... test_ucontext"
 	@echo "... test_stl"
 	@echo "... codebase"
@@ -906,6 +974,9 @@ help:
 	@echo "... codebase/STL/String.o"
 	@echo "... codebase/STL/String.i"
 	@echo "... codebase/STL/String.s"
+	@echo "... codebase/STL/Vector.o"
+	@echo "... codebase/STL/Vector.i"
+	@echo "... codebase/STL/Vector.s"
 	@echo "... codebase/datastructure/lock_free_queue.o"
 	@echo "... codebase/datastructure/lock_free_queue.i"
 	@echo "... codebase/datastructure/lock_free_queue.s"
@@ -936,6 +1007,9 @@ help:
 	@echo "... tests/test_String.o"
 	@echo "... tests/test_String.i"
 	@echo "... tests/test_String.s"
+	@echo "... tests/test_Vector.o"
+	@echo "... tests/test_Vector.i"
+	@echo "... tests/test_Vector.s"
 	@echo "... tests/test_allocator.o"
 	@echo "... tests/test_allocator.i"
 	@echo "... tests/test_allocator.s"

@@ -20,3 +20,5 @@ CXX_INCLUDES = -I/home/wddxrw/workspace/codebase/C++/codebase
 
 # Custom defines: CMakeFiles/codebase.dir/codebase/STL/String.cc.o_DEFINES = __FILE__="codebase/STL/String.cc"
 
+# Custom defines: CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o_DEFINES = __FILE__="codebase/STL/Vector.cc"
+

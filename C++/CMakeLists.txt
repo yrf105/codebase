@@ -28,7 +28,8 @@ set(LIB_SRC
     codebase/design_patterns/singleton.cc
     codebase/STL/List.cc
     codebase/datastructure/lock_free_queue.cc
-    codebase/STL/String.cc)
+    codebase/STL/String.cc
+    codebase/STL/Vector.cc)
 
 set(LIBS
     codebase
@@ -53,6 +54,7 @@ codebase_add_executable(List_test "tests/List_test.cc" codebase "${LIBS}")
 codebase_add_executable(lock_free_queue_test "tests/lock_free_queue_test.cc" codebase "${LIBS}")
 codebase_add_executable(test_virtual_func "tests/test_virtual_func.cc" codebase "${LIBS}")
 codebase_add_executable(test_String "tests/test_String.cc" codebase "${LIBS}")
+codebase_add_executable(test_Vector "tests/test_Vector.cc" codebase "${LIBS}")
 
 # 指定可执行文件的存放路径
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

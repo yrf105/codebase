@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/wddxrw/workspace/codebase/C++/bin/mmap_test"
+			"path" : "/home/wddxrw/workspace/codebase/C++/bin/singleton_test"
 		}
 	],
 	"backtrace" : 2,
@@ -85,7 +85,7 @@
 			[
 				{
 					"backtrace" : 7,
-					"define" : "__FILE__=\"tests/mmap_test.cc\""
+					"define" : "__FILE__=\"tests/singleton_test.cc\""
 				}
 			],
 			"includes" : 
@@ -109,7 +109,7 @@
 			"id" : "codebase::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "mmap_test::@6890427a1f51a3e7e1df",
+	"id" : "singleton_test::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -138,8 +138,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "mmap_test",
-	"nameOnDisk" : "mmap_test",
+	"name" : "singleton_test",
+	"nameOnDisk" : "singleton_test",
 	"paths" : 
 	{
 		"build" : ".",
@@ -160,7 +160,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "tests/mmap_test.cc",
+			"path" : "tests/singleton_test.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

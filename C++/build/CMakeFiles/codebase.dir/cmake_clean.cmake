@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "../lib/libcodebase.so"
   "CMakeFiles/codebase.dir/codebase/STL/List.cc.o"
   "CMakeFiles/codebase.dir/codebase/STL/String.cc.o"
+  "CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o"
   "CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o"
   "CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o"
   "CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o"
