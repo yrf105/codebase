@@ -1,1 +1,0 @@
-/usr/bin/c++   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++11    CMakeFiles/singleton_test.dir/tests/singleton_test.cc.o  -o /home/wddxrw/workspace/codebase/C++/bin/singleton_test  -Wl,-rpath,/home/wddxrw/workspace/codebase/C++/lib /home/wddxrw/workspace/codebase/C++/lib/libcodebase.so -lpthread 
