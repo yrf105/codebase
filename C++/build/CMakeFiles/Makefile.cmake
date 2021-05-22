@@ -59,6 +59,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/codebase.dir/DependInfo.cmake"
   "CMakeFiles/test_allocator.dir/DependInfo.cmake"
   "CMakeFiles/test_function_bind.dir/DependInfo.cmake"
+  "CMakeFiles/test_smart_ptr.dir/DependInfo.cmake"
   "CMakeFiles/test_tuple.dir/DependInfo.cmake"
   "CMakeFiles/singleton_test.dir/DependInfo.cmake"
   "CMakeFiles/mmap_test.dir/DependInfo.cmake"

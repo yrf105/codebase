@@ -231,6 +231,19 @@ test_function_bind/fast:
 .PHONY : test_function_bind/fast
 
 #=============================================================================
+# Target rules for targets named test_smart_ptr
+
+# Build rule for target.
+test_smart_ptr: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_smart_ptr
+.PHONY : test_smart_ptr
+
+# fast build rule for target.
+test_smart_ptr/fast:
+	$(MAKE) -f CMakeFiles/test_smart_ptr.dir/build.make CMakeFiles/test_smart_ptr.dir/build
+.PHONY : test_smart_ptr/fast
+
+#=============================================================================
 # Target rules for targets named test_tuple
 
 # Build rule for target.
@@ -400,6 +413,33 @@ codebase/STL/List.cc.s:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/List.cc.s
 .PHONY : codebase/STL/List.cc.s
 
+codebase/STL/RefCounter.o: codebase/STL/RefCounter.cc.o
+
+.PHONY : codebase/STL/RefCounter.o
+
+# target to build an object file
+codebase/STL/RefCounter.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o
+.PHONY : codebase/STL/RefCounter.cc.o
+
+codebase/STL/RefCounter.i: codebase/STL/RefCounter.cc.i
+
+.PHONY : codebase/STL/RefCounter.i
+
+# target to preprocess a source file
+codebase/STL/RefCounter.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.i
+.PHONY : codebase/STL/RefCounter.cc.i
+
+codebase/STL/RefCounter.s: codebase/STL/RefCounter.cc.s
+
+.PHONY : codebase/STL/RefCounter.s
+
+# target to generate assembly for a file
+codebase/STL/RefCounter.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.s
+.PHONY : codebase/STL/RefCounter.cc.s
+
 codebase/STL/String.o: codebase/STL/String.cc.o
 
 .PHONY : codebase/STL/String.o
@@ -453,6 +493,33 @@ codebase/STL/Vector.s: codebase/STL/Vector.cc.s
 codebase/STL/Vector.cc.s:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/Vector.cc.s
 .PHONY : codebase/STL/Vector.cc.s
+
+codebase/STL/smart_ptr.o: codebase/STL/smart_ptr.cc.o
+
+.PHONY : codebase/STL/smart_ptr.o
+
+# target to build an object file
+codebase/STL/smart_ptr.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o
+.PHONY : codebase/STL/smart_ptr.cc.o
+
+codebase/STL/smart_ptr.i: codebase/STL/smart_ptr.cc.i
+
+.PHONY : codebase/STL/smart_ptr.i
+
+# target to preprocess a source file
+codebase/STL/smart_ptr.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.i
+.PHONY : codebase/STL/smart_ptr.cc.i
+
+codebase/STL/smart_ptr.s: codebase/STL/smart_ptr.cc.s
+
+.PHONY : codebase/STL/smart_ptr.s
+
+# target to generate assembly for a file
+codebase/STL/smart_ptr.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.s
+.PHONY : codebase/STL/smart_ptr.cc.s
 
 codebase/datastructure/lock_free_queue.o: codebase/datastructure/lock_free_queue.cc.o
 
@@ -832,6 +899,33 @@ tests/test_random_number.cc.s:
 	$(MAKE) -f CMakeFiles/test_random_number.dir/build.make CMakeFiles/test_random_number.dir/tests/test_random_number.cc.s
 .PHONY : tests/test_random_number.cc.s
 
+tests/test_smart_ptr.o: tests/test_smart_ptr.cc.o
+
+.PHONY : tests/test_smart_ptr.o
+
+# target to build an object file
+tests/test_smart_ptr.cc.o:
+	$(MAKE) -f CMakeFiles/test_smart_ptr.dir/build.make CMakeFiles/test_smart_ptr.dir/tests/test_smart_ptr.cc.o
+.PHONY : tests/test_smart_ptr.cc.o
+
+tests/test_smart_ptr.i: tests/test_smart_ptr.cc.i
+
+.PHONY : tests/test_smart_ptr.i
+
+# target to preprocess a source file
+tests/test_smart_ptr.cc.i:
+	$(MAKE) -f CMakeFiles/test_smart_ptr.dir/build.make CMakeFiles/test_smart_ptr.dir/tests/test_smart_ptr.cc.i
+.PHONY : tests/test_smart_ptr.cc.i
+
+tests/test_smart_ptr.s: tests/test_smart_ptr.cc.s
+
+.PHONY : tests/test_smart_ptr.s
+
+# target to generate assembly for a file
+tests/test_smart_ptr.cc.s:
+	$(MAKE) -f CMakeFiles/test_smart_ptr.dir/build.make CMakeFiles/test_smart_ptr.dir/tests/test_smart_ptr.cc.s
+.PHONY : tests/test_smart_ptr.cc.s
+
 tests/test_stl.o: tests/test_stl.cc.o
 
 .PHONY : tests/test_stl.o
@@ -957,6 +1051,7 @@ help:
 	@echo "... codebase"
 	@echo "... test_allocator"
 	@echo "... test_function_bind"
+	@echo "... test_smart_ptr"
 	@echo "... test_tuple"
 	@echo "... singleton_test"
 	@echo "... mmap_test"
@@ -971,12 +1066,18 @@ help:
 	@echo "... codebase/STL/List.o"
 	@echo "... codebase/STL/List.i"
 	@echo "... codebase/STL/List.s"
+	@echo "... codebase/STL/RefCounter.o"
+	@echo "... codebase/STL/RefCounter.i"
+	@echo "... codebase/STL/RefCounter.s"
 	@echo "... codebase/STL/String.o"
 	@echo "... codebase/STL/String.i"
 	@echo "... codebase/STL/String.s"
 	@echo "... codebase/STL/Vector.o"
 	@echo "... codebase/STL/Vector.i"
 	@echo "... codebase/STL/Vector.s"
+	@echo "... codebase/STL/smart_ptr.o"
+	@echo "... codebase/STL/smart_ptr.i"
+	@echo "... codebase/STL/smart_ptr.s"
 	@echo "... codebase/datastructure/lock_free_queue.o"
 	@echo "... codebase/datastructure/lock_free_queue.i"
 	@echo "... codebase/datastructure/lock_free_queue.s"
@@ -1019,6 +1120,9 @@ help:
 	@echo "... tests/test_random_number.o"
 	@echo "... tests/test_random_number.i"
 	@echo "... tests/test_random_number.s"
+	@echo "... tests/test_smart_ptr.o"
+	@echo "... tests/test_smart_ptr.i"
+	@echo "... tests/test_smart_ptr.s"
 	@echo "... tests/test_stl.o"
 	@echo "... tests/test_stl.i"
 	@echo "... tests/test_stl.s"

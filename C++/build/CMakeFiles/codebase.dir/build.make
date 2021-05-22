@@ -151,6 +151,32 @@ CMakeFiles/codebase.dir/codebase/STL/Vector.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/STL/Vector.cc.s"
 	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/Vector.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/STL/Vector.cc -o CMakeFiles/codebase.dir/codebase/STL/Vector.cc.s
 
+CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o: CMakeFiles/codebase.dir/flags.make
+CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o: ../codebase/STL/smart_ptr.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o"
+	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/STL/smart_ptr.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/STL/smart_ptr.cc
+
+CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.i"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/smart_ptr.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/STL/smart_ptr.cc > CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.i
+
+CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.s"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/smart_ptr.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/STL/smart_ptr.cc -o CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.s
+
+CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o: CMakeFiles/codebase.dir/flags.make
+CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o: ../codebase/STL/RefCounter.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o"
+	/bin/g++-9  $(CXX_DEFINES) -D__FILE__=\"codebase/STL/RefCounter.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o -c /home/wddxrw/workspace/codebase/C++/codebase/STL/RefCounter.cc
+
+CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.i"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/RefCounter.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wddxrw/workspace/codebase/C++/codebase/STL/RefCounter.cc > CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.i
+
+CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.s"
+	/bin/g++-9 $(CXX_DEFINES) -D__FILE__=\"codebase/STL/RefCounter.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wddxrw/workspace/codebase/C++/codebase/STL/RefCounter.cc -o CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.s
+
 # Object files for target codebase
 codebase_OBJECTS = \
 "CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o" \
@@ -159,7 +185,9 @@ codebase_OBJECTS = \
 "CMakeFiles/codebase.dir/codebase/STL/List.cc.o" \
 "CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o" \
 "CMakeFiles/codebase.dir/codebase/STL/String.cc.o" \
-"CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o"
+"CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o" \
+"CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o" \
+"CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o"
 
 # External object files for target codebase
 codebase_EXTERNAL_OBJECTS =
@@ -171,9 +199,11 @@ codebase_EXTERNAL_OBJECTS =
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/STL/String.cc.o
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/STL/Vector.cc.o
+../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/STL/smart_ptr.cc.o
+../lib/libcodebase.so: CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/build.make
 ../lib/libcodebase.so: CMakeFiles/codebase.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library ../lib/libcodebase.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wddxrw/workspace/codebase/C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library ../lib/libcodebase.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/codebase.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

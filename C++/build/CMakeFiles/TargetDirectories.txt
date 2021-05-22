@@ -9,6 +9,7 @@
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/codebase.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/test_allocator.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/test_function_bind.dir
+/home/wddxrw/workspace/codebase/C++/build/CMakeFiles/test_smart_ptr.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/test_tuple.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/singleton_test.dir
 /home/wddxrw/workspace/codebase/C++/build/CMakeFiles/mmap_test.dir
