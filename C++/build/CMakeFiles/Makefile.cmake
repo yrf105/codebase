@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../cmake/utils.cmake"
   "../codebase/concurrent/CMakeLists.txt"
   "../codebase/concurrent/examples/CMakeLists.txt"
+  "../codebase/server/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -46,6 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "codebase/concurrent/CMakeFiles/CMakeDirectoryInformation.cmake"
   "codebase/concurrent/examples/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "codebase/server/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -71,4 +73,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "codebase/concurrent/examples/CMakeFiles/synchronizing_concurrent_operation.dir/DependInfo.cmake"
   "codebase/concurrent/examples/CMakeFiles/sharing_data_between_thread.dir/DependInfo.cmake"
   "codebase/concurrent/examples/CMakeFiles/managing_thread.dir/DependInfo.cmake"
+  "codebase/server/CMakeFiles/epoll.dir/DependInfo.cmake"
+  "codebase/server/CMakeFiles/client.dir/DependInfo.cmake"
+  "codebase/server/CMakeFiles/poll.dir/DependInfo.cmake"
   )

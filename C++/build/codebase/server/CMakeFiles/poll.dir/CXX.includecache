@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wddxrw/workspace/codebase/C++/codebase/server/poll.cc
+arpa/inet.h
+-
+errno.h
+-
+fcntl.h
+-
+netinet/in.h
+-
+poll.h
+-
+signal.h
+-
+sys/socket.h
+-
+sys/stat.h
+-
+sys/types.h
+-
+unistd.h
+-
+cstring
+-
+iostream
+-
+vector
+-
+

@@ -386,6 +386,45 @@ managing_thread/fast:
 	$(MAKE) -f codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build.make codebase/concurrent/examples/CMakeFiles/managing_thread.dir/build
 .PHONY : managing_thread/fast
 
+#=============================================================================
+# Target rules for targets named epoll
+
+# Build rule for target.
+epoll: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 epoll
+.PHONY : epoll
+
+# fast build rule for target.
+epoll/fast:
+	$(MAKE) -f codebase/server/CMakeFiles/epoll.dir/build.make codebase/server/CMakeFiles/epoll.dir/build
+.PHONY : epoll/fast
+
+#=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) -f codebase/server/CMakeFiles/client.dir/build.make codebase/server/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+#=============================================================================
+# Target rules for targets named poll
+
+# Build rule for target.
+poll: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 poll
+.PHONY : poll
+
+# fast build rule for target.
+poll/fast:
+	$(MAKE) -f codebase/server/CMakeFiles/poll.dir/build.make codebase/server/CMakeFiles/poll.dir/build
+.PHONY : poll/fast
+
 codebase/STL/List.o: codebase/STL/List.cc.o
 
 .PHONY : codebase/STL/List.o
@@ -1063,6 +1102,9 @@ help:
 	@echo "... synchronizing_concurrent_operation"
 	@echo "... sharing_data_between_thread"
 	@echo "... managing_thread"
+	@echo "... epoll"
+	@echo "... client"
+	@echo "... poll"
 	@echo "... codebase/STL/List.o"
 	@echo "... codebase/STL/List.i"
 	@echo "... codebase/STL/List.s"
