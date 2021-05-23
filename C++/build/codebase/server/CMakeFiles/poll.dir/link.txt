@@ -1,1 +1,0 @@
-/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g   CMakeFiles/poll.dir/poll.cc.o  -o ../../../bin/poll 

@@ -1,1 +1,0 @@
-/bin/g++-9   -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g   CMakeFiles/test_ucontext.dir/tests/test_ucontext.cc.o  -o ../bin/test_ucontext  -Wl,-rpath,/home/wddxrw/workspace/codebase/C++/lib ../lib/libcodebase.so -lpthread 
