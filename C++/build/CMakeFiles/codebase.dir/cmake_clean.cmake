@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/codebase.dir/codebase/datastructure/lock_free_queue.cc.o"
   "CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o"
   "CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o"
+  "CMakeFiles/codebase.dir/codebase/server/Thread.cc.o"
   "CMakeFiles/codebase.dir/codebase/utils/utils.cc.o"
 )
 

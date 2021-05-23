@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../codebase/server/Thread.h
+pthread.h
+-
+functional
+-
+
+/home/wddxrw/workspace/codebase/C++/tests/test_server_Thread.cc
+server/Thread.h
+/home/wddxrw/workspace/codebase/C++/tests/server/Thread.h
+unistd.h
+-
+iostream
+-
+string
+-
+

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/wddxrw/workspace/codebase/C++/bin/singleton_test"
+			"path" : "/home/wddxrw/workspace/codebase/C++/bin/List_test"
 		}
 	],
 	"backtrace" : 2,
@@ -31,7 +31,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 53,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
@@ -85,7 +85,7 @@
 			[
 				{
 					"backtrace" : 7,
-					"define" : "__FILE__=\"tests/singleton_test.cc\""
+					"define" : "__FILE__=\"tests/List_test.cc\""
 				}
 			],
 			"includes" : 
@@ -109,7 +109,7 @@
 			"id" : "codebase::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "singleton_test::@6890427a1f51a3e7e1df",
+	"id" : "List_test::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -138,8 +138,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "singleton_test",
-	"nameOnDisk" : "singleton_test",
+	"name" : "List_test",
+	"nameOnDisk" : "List_test",
 	"paths" : 
 	{
 		"build" : ".",
@@ -160,7 +160,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "tests/singleton_test.cc",
+			"path" : "tests/List_test.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

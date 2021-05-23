@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 41,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
@@ -40,8 +40,14 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 42,
+				"line" : 43,
 				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 3
 			},
 			{
 				"command" : 2,
@@ -370,6 +376,36 @@
 			[
 				8
 			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a  -g -fPIC  "
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 13,
+					"define" : "__FILE__=\"codebase/server/Thread.cc\""
+				},
+				{
+					"define" : "codebase_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/wddxrw/workspace/codebase/C++/codebase"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				9
+			]
 		}
 	],
 	"id" : "codebase::@6890427a1f51a3e7e1df",
@@ -405,7 +441,8 @@
 				5,
 				6,
 				7,
-				8
+				8,
+				9
 			]
 		}
 	],
@@ -463,6 +500,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 8,
 			"path" : "codebase/STL/RefCounter.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 9,
+			"path" : "codebase/server/Thread.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

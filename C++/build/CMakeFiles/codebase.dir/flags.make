@@ -26,3 +26,5 @@ CXX_INCLUDES = -I/home/wddxrw/workspace/codebase/C++/codebase
 
 # Custom defines: CMakeFiles/codebase.dir/codebase/STL/RefCounter.cc.o_DEFINES = __FILE__="codebase/STL/RefCounter.cc"
 
+# Custom defines: CMakeFiles/codebase.dir/codebase/server/Thread.cc.o_DEFINES = __FILE__="codebase/server/Thread.cc"
+

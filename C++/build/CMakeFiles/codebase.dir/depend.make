@@ -28,6 +28,9 @@ CMakeFiles/codebase.dir/codebase/design_patterns/singleton.cc.o: ../codebase/des
 CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o: ../codebase/random_number/random_number.cc
 CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.o: ../codebase/random_number/random_number.h
 
+CMakeFiles/codebase.dir/codebase/server/Thread.cc.o: ../codebase/server/Thread.cc
+CMakeFiles/codebase.dir/codebase/server/Thread.cc.o: ../codebase/server/Thread.h
+
 CMakeFiles/codebase.dir/codebase/utils/utils.cc.o: ../codebase/random_number/random_number.h
 CMakeFiles/codebase.dir/codebase/utils/utils.cc.o: ../codebase/utils/utils.cc
 CMakeFiles/codebase.dir/codebase/utils/utils.cc.o: ../codebase/utils/utils.h

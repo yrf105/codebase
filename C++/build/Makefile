@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_equality_comparable
+
+# Build rule for target.
+test_equality_comparable: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_equality_comparable
+.PHONY : test_equality_comparable
+
+# fast build rule for target.
+test_equality_comparable/fast:
+	$(MAKE) -f CMakeFiles/test_equality_comparable.dir/build.make CMakeFiles/test_equality_comparable.dir/build
+.PHONY : test_equality_comparable/fast
+
+#=============================================================================
 # Target rules for targets named test_String
 
 # Build rule for target.
@@ -281,6 +294,19 @@ mmap_test: cmake_check_build_system
 mmap_test/fast:
 	$(MAKE) -f CMakeFiles/mmap_test.dir/build.make CMakeFiles/mmap_test.dir/build
 .PHONY : mmap_test/fast
+
+#=============================================================================
+# Target rules for targets named test_server_Thread
+
+# Build rule for target.
+test_server_Thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_server_Thread
+.PHONY : test_server_Thread
+
+# fast build rule for target.
+test_server_Thread/fast:
+	$(MAKE) -f CMakeFiles/test_server_Thread.dir/build.make CMakeFiles/test_server_Thread.dir/build
+.PHONY : test_server_Thread/fast
 
 #=============================================================================
 # Target rules for targets named List_test
@@ -641,6 +667,33 @@ codebase/random_number/random_number.cc.s:
 	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/random_number/random_number.cc.s
 .PHONY : codebase/random_number/random_number.cc.s
 
+codebase/server/Thread.o: codebase/server/Thread.cc.o
+
+.PHONY : codebase/server/Thread.o
+
+# target to build an object file
+codebase/server/Thread.cc.o:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/server/Thread.cc.o
+.PHONY : codebase/server/Thread.cc.o
+
+codebase/server/Thread.i: codebase/server/Thread.cc.i
+
+.PHONY : codebase/server/Thread.i
+
+# target to preprocess a source file
+codebase/server/Thread.cc.i:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/server/Thread.cc.i
+.PHONY : codebase/server/Thread.cc.i
+
+codebase/server/Thread.s: codebase/server/Thread.cc.s
+
+.PHONY : codebase/server/Thread.s
+
+# target to generate assembly for a file
+codebase/server/Thread.cc.s:
+	$(MAKE) -f CMakeFiles/codebase.dir/build.make CMakeFiles/codebase.dir/codebase/server/Thread.cc.s
+.PHONY : codebase/server/Thread.cc.s
+
 codebase/utils/utils.o: codebase/utils/utils.cc.o
 
 .PHONY : codebase/utils/utils.o
@@ -884,6 +937,33 @@ tests/test_allocator.cc.s:
 	$(MAKE) -f CMakeFiles/test_allocator.dir/build.make CMakeFiles/test_allocator.dir/tests/test_allocator.cc.s
 .PHONY : tests/test_allocator.cc.s
 
+tests/test_equality_comparable.o: tests/test_equality_comparable.cc.o
+
+.PHONY : tests/test_equality_comparable.o
+
+# target to build an object file
+tests/test_equality_comparable.cc.o:
+	$(MAKE) -f CMakeFiles/test_equality_comparable.dir/build.make CMakeFiles/test_equality_comparable.dir/tests/test_equality_comparable.cc.o
+.PHONY : tests/test_equality_comparable.cc.o
+
+tests/test_equality_comparable.i: tests/test_equality_comparable.cc.i
+
+.PHONY : tests/test_equality_comparable.i
+
+# target to preprocess a source file
+tests/test_equality_comparable.cc.i:
+	$(MAKE) -f CMakeFiles/test_equality_comparable.dir/build.make CMakeFiles/test_equality_comparable.dir/tests/test_equality_comparable.cc.i
+.PHONY : tests/test_equality_comparable.cc.i
+
+tests/test_equality_comparable.s: tests/test_equality_comparable.cc.s
+
+.PHONY : tests/test_equality_comparable.s
+
+# target to generate assembly for a file
+tests/test_equality_comparable.cc.s:
+	$(MAKE) -f CMakeFiles/test_equality_comparable.dir/build.make CMakeFiles/test_equality_comparable.dir/tests/test_equality_comparable.cc.s
+.PHONY : tests/test_equality_comparable.cc.s
+
 tests/test_function_bind.o: tests/test_function_bind.cc.o
 
 .PHONY : tests/test_function_bind.o
@@ -937,6 +1017,33 @@ tests/test_random_number.s: tests/test_random_number.cc.s
 tests/test_random_number.cc.s:
 	$(MAKE) -f CMakeFiles/test_random_number.dir/build.make CMakeFiles/test_random_number.dir/tests/test_random_number.cc.s
 .PHONY : tests/test_random_number.cc.s
+
+tests/test_server_Thread.o: tests/test_server_Thread.cc.o
+
+.PHONY : tests/test_server_Thread.o
+
+# target to build an object file
+tests/test_server_Thread.cc.o:
+	$(MAKE) -f CMakeFiles/test_server_Thread.dir/build.make CMakeFiles/test_server_Thread.dir/tests/test_server_Thread.cc.o
+.PHONY : tests/test_server_Thread.cc.o
+
+tests/test_server_Thread.i: tests/test_server_Thread.cc.i
+
+.PHONY : tests/test_server_Thread.i
+
+# target to preprocess a source file
+tests/test_server_Thread.cc.i:
+	$(MAKE) -f CMakeFiles/test_server_Thread.dir/build.make CMakeFiles/test_server_Thread.dir/tests/test_server_Thread.cc.i
+.PHONY : tests/test_server_Thread.cc.i
+
+tests/test_server_Thread.s: tests/test_server_Thread.cc.s
+
+.PHONY : tests/test_server_Thread.s
+
+# target to generate assembly for a file
+tests/test_server_Thread.cc.s:
+	$(MAKE) -f CMakeFiles/test_server_Thread.dir/build.make CMakeFiles/test_server_Thread.dir/tests/test_server_Thread.cc.s
+.PHONY : tests/test_server_Thread.cc.s
 
 tests/test_smart_ptr.o: tests/test_smart_ptr.cc.o
 
@@ -1079,6 +1186,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... test_equality_comparable"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test_String"
@@ -1094,6 +1202,7 @@ help:
 	@echo "... test_tuple"
 	@echo "... singleton_test"
 	@echo "... mmap_test"
+	@echo "... test_server_Thread"
 	@echo "... List_test"
 	@echo "... lock_free_queue_test"
 	@echo "... test_virtual_func"
@@ -1129,6 +1238,9 @@ help:
 	@echo "... codebase/random_number/random_number.o"
 	@echo "... codebase/random_number/random_number.i"
 	@echo "... codebase/random_number/random_number.s"
+	@echo "... codebase/server/Thread.o"
+	@echo "... codebase/server/Thread.i"
+	@echo "... codebase/server/Thread.s"
 	@echo "... codebase/utils/utils.o"
 	@echo "... codebase/utils/utils.i"
 	@echo "... codebase/utils/utils.s"
@@ -1156,12 +1268,18 @@ help:
 	@echo "... tests/test_allocator.o"
 	@echo "... tests/test_allocator.i"
 	@echo "... tests/test_allocator.s"
+	@echo "... tests/test_equality_comparable.o"
+	@echo "... tests/test_equality_comparable.i"
+	@echo "... tests/test_equality_comparable.s"
 	@echo "... tests/test_function_bind.o"
 	@echo "... tests/test_function_bind.i"
 	@echo "... tests/test_function_bind.s"
 	@echo "... tests/test_random_number.o"
 	@echo "... tests/test_random_number.i"
 	@echo "... tests/test_random_number.s"
+	@echo "... tests/test_server_Thread.o"
+	@echo "... tests/test_server_Thread.i"
+	@echo "... tests/test_server_Thread.s"
 	@echo "... tests/test_smart_ptr.o"
 	@echo "... tests/test_smart_ptr.i"
 	@echo "... tests/test_smart_ptr.s"
