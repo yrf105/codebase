@@ -33,3 +33,6 @@
 
 C++/build/
 C++/bin/
+node_modules
+package.json
+package-lock.json
