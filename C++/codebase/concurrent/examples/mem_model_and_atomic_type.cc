@@ -23,16 +23,23 @@ static void test1() {
     std::cout << "=-=-= test1 =-=-=\n";
 
     // C++17中每个原子类型都有一个is_always_lock_free成员变量，为true时表示该原子类型在此平台上lock-free
-    
+    std::cout << std::boolalpha << std::atomic<int>::is_always_lock_free << std::endl; // true
+    std::cout << std::boolalpha << std::atomic<A>::is_always_lock_free << std::endl; // false
     // C++17之前可以用标准库为各个原子类型定义的ATOMIC_xxx_LOCK_FREE宏来判断该类型是否无锁，值为0表示原子类型是有锁的，为2表示无锁，为1表示运行时才能确定
+    std::cout << ATOMIC_INT_LOCK_FREE << std::endl; // 2
+    std::cout << ATOMIC_POINTER_LOCK_FREE << std::endl; // 2
+    std::atomic<int> ai1{3};
+    std::atomic<int> ai2{2};
 }
 
 static void test2() {
     std::cout << "=-=-= test2 =-=-=\n";
     
     std::atomic_flag x = ATOMIC_FLAG_INIT;
+
+    // clear() 不能为读操作语义：memory_order_consume、memory_order_acquire、memory_order_acq_rel
     x.clear(std::memory_order_release); // 将状态设为clear（false）
-    // 不能为读操作语义：memory_order_consume、memory_order_acquire、memory_order_acq_rel
+   
     bool y = x.test_and_set(); // 将状态设为set（true）且返回之前的值
     std::cout << y << std::endl;
 }
@@ -88,12 +95,45 @@ static void test4() {
     
     std::atomic<bool> x(true);
     x = false;
-    // bool y = x.load(std::memory_order_acquire);
+    bool y = x.load(std::memory_order_acquire);
     x.store(true);
+    y = x.exchange(false, std::memory_order_acq_rel);
 
-    // y = x.exchange(false, std::memory_order_acq_rel);
+    std::cout << std::boolalpha << y << std::endl // true
+              << x << std::endl; // false
+}
 
-    std::cout << x.is_lock_free() << std::endl;
+static void test5() {
+    std::cout << "=-=-= test5 =-=-=\n";
+    
+    std::atomic<bool> x(false);
+    bool expected = false;
+    while (!x.compare_exchange_weak(expected, true) && !expected);
+}
+
+static void test6() {
+    std::cout << "=-=-= test7 =-=-=\n";
+
+    int array[5] = {0,1,2,3,4};
+    std::atomic<int*> atomic_array{array};
+    ++atomic_array;
+    std::cout << *atomic_array.load() << std::endl; // 1
+    --atomic_array;
+    std::cout << *atomic_array.load() << std::endl; // 0
+
+    // 加 1 并返回新的值
+    atomic_array += 1;
+    std::cout << *atomic_array.load() << std::endl; // 1
+    // 减 1 并返回新的值
+    atomic_array -= 1;
+    std::cout << *atomic_array.load() << std::endl; // 0
+
+    // 加 3 并返回原来的值
+    std::cout << *atomic_array.fetch_add(3) << std::endl; // 0
+    // 减 2 并返回原来的值
+    std::cout << *atomic_array.fetch_sub(2) << std::endl; // 3
+    std::cout << *atomic_array.load() << std::endl; // 1
+
 }
 
 int main(int argc, char** argv) {
@@ -115,10 +155,16 @@ int main(int argc, char** argv) {
 
     std::cout << "=-=-= std::atomic_flag=-=-=\n";
     
+    // test2();
+    
     // test3();
 
     std::cout << "=-=-= 其他原子类型 =-=-=\n";
-    test4();
+    // test4();
+
+    // test5();
+
+    test6();
 
     std::cout << "=-=-= test end =-=-=\n";
 
