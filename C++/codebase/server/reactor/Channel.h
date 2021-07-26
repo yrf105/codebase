@@ -56,7 +56,7 @@ public:
         return event_;
     }
     void set_revent(int revt) {
-        event_ = revt;
+        revent_ = revt;
     }
     bool isNoneEvent() const {
         return event_ == kNoneEvent;

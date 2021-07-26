@@ -1,5 +1,7 @@
 set(REACTOR_SRC
     EventLoop.cc
+    Channel.cc
+    EPoller.cc
 )
 
 set(REACTOR_LIB

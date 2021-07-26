@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "EventLoop.h"
+#include "log.h"
 
 namespace tihi {
 
@@ -12,7 +13,7 @@ const int Channel::kReadEvent = EPOLLIN;
 const int Channel::kWriteEvent = EPOLLOUT;
 
 Channel::Channel(EventLoop* loop, int fd)
-    : loop_(loop), fd_(fd), event(kNoneEvent), revent_(kNoneEvent), idx_(-1) {}
+    : loop_(loop), fd_(fd), event_(kNoneEvent), revent_(kNoneEvent), idx_(-1) {}
 
 void Channel::handleEvent() {
     // EPOLLPRI 表示接收到紧急数据（带外数据）
