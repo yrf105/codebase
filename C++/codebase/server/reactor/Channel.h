@@ -88,7 +88,7 @@ private:
     // poller 返回的事件
     int revent_;
 
-    //
+    // 供 Poller 来标识该 Channel 负责的 fd 的状态，-1 表示未在管理，>= 0 表示正在管理
     int idx_; // for Poller
 
     EventCallback errorCallback_;

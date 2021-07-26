@@ -3,9 +3,9 @@
 #include <sys/epoll.h>
 #include <sys/poll.h>
 
-#include "log.h"
 #include <memory>
 
+#include "log.h"
 #include "stdlib.h"
 
 namespace tihi {
@@ -19,10 +19,11 @@ EventLoop::EventLoop()
       threadId_(
           std::this_thread::get_id()),  // 将当前线程的 id 保存在 threadId_ 里
       quit_(true),
-      EPoller_(new EPoller(
-          this)) {  // one loop per thread 带来的好处，同一个 EventLoop
-                    // 里的代码一定在同一个线程里执行，不需要加锁，再构造函数里可以把
-                    // this 指针暴露出去（在多线程编程里是要避免的）
+      EPoller_(new EPoller(this)) {
+    // one loop per thread 带来的好处，同一个 EventLoop
+    // 里的代码一定在同一个线程里执行，不需要加锁，再构造函数里可以把
+    // this 指针暴露出去（在多线程编程里是要避免的）
+
     // 判断当前线程是否已经存在一个 EventLoop 了
     if (t_loopInThisThread) {
         // 若存在则终止程序
@@ -50,13 +51,13 @@ void EventLoop::loop() {
     while (!quit_) {
         activeChannels_.clear();
         auto timeout = EPoller_->poll(1 * 1000, activeChannels_);
-        LOG(timeout.time_since_epoch().count());
+        LOG_TRACE << timeout.time_since_epoch().count() << std::endl;
         for (auto activechannel : activeChannels_) {
             activechannel->handleEvent();
         }
     }
 
-    LOG("EventLoop 停止了 loop");
+    LOG_TRACE << "EventLoop 停止了 loop" << std::endl;
     looping_ = false;
 }
 
@@ -65,7 +66,11 @@ void EventLoop::abortNotInLoopThread() {
     ::abort();
 }
 
-void EventLoop::quit() { quit_ = true; }
+void EventLoop::quit() {
+    quit_ = true;
+    // 这里应当唤醒 poll，若不唤醒，则必须等待程序从 poll 中返回并检查 quit_
+    // 时才会退出
+}
 
 
 }  // namespace tihi

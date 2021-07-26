@@ -6,6 +6,8 @@
 tihi::EventLoop* g_loop;
 
 void timeout() {
+    // 这里应当 read timerfd，否则事件会一直触发（现在是水平触发模式）
+    
     std::cout << "超时" << std::endl;
     g_loop->quit();
 }

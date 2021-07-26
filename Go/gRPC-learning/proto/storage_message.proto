@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "github.com/yrf105/codebase/Go/gRPC-learning/pcbook";
+
+message Storage {
+    enum Type {
+        UNKNOWN = 0;
+        SSD = 1;
+        HDD = 2;
+    }
+
+    int32 number = 1;
+    Type type = 2;
+}

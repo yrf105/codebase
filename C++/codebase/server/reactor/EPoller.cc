@@ -27,9 +27,9 @@ std::chrono::system_clock::time_point EPoller::poll(int timeoutMS, ChannelList& 
 
         fillActiveChannels(nReady, activeChannels);
     } else if (nReady == 0) {
-        LOG("没有事件发生");
+        LOG_TRACE << "没有事件发生" << std::endl;
     } else {
-        LOG("有错误发生");
+        LOG_TRACE << "有错误发生" << std::endl;
     }
     return std::chrono::system_clock::now();
 }
@@ -48,6 +48,10 @@ void EPoller::updateChannel(Channel* channel) {
     } else {
         if (channel->isNoneEvent()) {
             ret = epoll_ctl(epollFd_, EPOLL_CTL_DEL, fd, nullptr);
+
+            // 为了在下面将 index 值为 -1，这里先将 fd 值为 -1
+            // index 为 -1 表示该 Channel 所负责的 fd 未被 EPoller 管理
+            fd = -1; 
         } else {
             ret = epoll_ctl(epollFd_, EPOLL_CTL_MOD, fd, &event);
         }

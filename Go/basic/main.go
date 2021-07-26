@@ -1,6 +1,6 @@
 package main
 
-import "github.com/yrf105/basic/multithread"
+import "github.com/yrf/codebase/Go/basic/multithread"
 
 func main() {
 	multithread.AtomicCounter()

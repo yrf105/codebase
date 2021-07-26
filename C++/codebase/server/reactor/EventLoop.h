@@ -1,20 +1,22 @@
 #ifndef REACTOR_EVENTLOOP_H
 #define REACTOR_EVENTLOOP_H
 
+#include <assert.h>
+
 #include <atomic>
 #include <boost/noncopyable.hpp>
+#include <memory>
 #include <thread>
 #include <vector>
-#include <memory>
-#include "EPoller.h"
-#include <assert.h>
+
 #include "Channel.h"
+#include "EPoller.h"
 
 namespace tihi {
 
 class Channel;
 
-class EventLoop : public boost::noncopyable { // 不可拷贝
+class EventLoop : public boost::noncopyable {  // 不可拷贝
 public:
     EventLoop();
     ~EventLoop();
