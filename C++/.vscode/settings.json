@@ -71,6 +71,9 @@
         "stack": "cpp",
         "shared_mutex": "cpp",
         "future": "cpp",
-        "iomanip": "cpp"
-    }
+        "iomanip": "cpp",
+        "any": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+    
 }

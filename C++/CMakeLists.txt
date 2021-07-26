@@ -22,6 +22,11 @@ include_directories(codebase/)
 # 指定引用的外部库的路径
 # link_directories(third_party/yaml-cpp/bulid)
 
+if(NOT TARGET spdlog)
+    # Stand-alone build
+    find_package(spdlog REQUIRED)
+endif()
+
 set(LIB_SRC
     codebase/random_number/random_number.cc
     codebase/utils/utils.cc
@@ -72,8 +77,13 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 # 指定输出库的存放路径
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
-# add_subdirectory(codebase/concurrent) 
-# add_subdirectory(codebase/server)
+add_subdirectory(codebase/concurrent) 
+add_subdirectory(codebase/basic) 
+add_subdirectory(codebase/server)
 # add_subdirectory(codebase/effective)
-add_subdirectory(codebase/moreeffective)
+# add_subdirectory(codebase/moreeffective)
+add_subdirectory(codebase/effectivemodern)
+add_subdirectory(codebase/log)
 
+add_subdirectory(tests/googletest_examples)
+add_subdirectory(tests/benchmark_examples)

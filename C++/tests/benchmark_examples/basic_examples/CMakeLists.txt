@@ -1,0 +1,4 @@
+find_package(benchmark REQUIRED)
+
+add_executable(basic_benchmark basic_benchmark.cc)
+target_link_libraries(basic_benchmark benchmark pthread)
