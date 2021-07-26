@@ -7,12 +7,16 @@
 
 namespace tihi {
 
+class Channel;
+
 class EventLoop : public boost::noncopyable {  // 不可拷贝
 public:
     EventLoop();
     ~EventLoop();
 
     void loop();
+
+    void updateChannel(Channel* channel);
 
     // 断言 EventLoop 属于当前线程
     void assertInLoopThread() {
