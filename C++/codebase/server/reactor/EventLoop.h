@@ -11,6 +11,9 @@
 
 #include "Channel.h"
 #include "EPoller.h"
+#include "TimerQueue.h"
+#include "Callbacks.h"
+#include "TimerId.h"
 
 namespace tihi {
 
@@ -28,6 +31,10 @@ public:
         assertInLoopThread();
         EPoller_->updateChannel(channel);
     }
+
+    TimerId runAt(const Timer::TimePoint& time, const TimerCallback& callback);
+    TimerId runAfter(const std::chrono::nanoseconds delay, const TimerCallback& callback);
+    TimerId runEvery(const std::chrono::nanoseconds interval, const TimerCallback& callback);
 
     // 断言 EventLoop 属于当前线程
     void assertInLoopThread() {
@@ -59,6 +66,8 @@ private:
     ChannelList activeChannels_;
 
     std::unique_ptr<EPoller> EPoller_;
+
+    std::unique_ptr<TimerQueue> timerQueue_;
 };
 
 }  // namespace tihi

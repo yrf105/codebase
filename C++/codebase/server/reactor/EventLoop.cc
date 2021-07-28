@@ -19,7 +19,8 @@ EventLoop::EventLoop()
       threadId_(
           std::this_thread::get_id()),  // 将当前线程的 id 保存在 threadId_ 里
       quit_(true),
-      EPoller_(new EPoller(this)) {
+      EPoller_(new EPoller(this)),
+      timerQueue_(new TimerQueue(this)) {
     // one loop per thread 带来的好处，同一个 EventLoop
     // 里的代码一定在同一个线程里执行，不需要加锁，再构造函数里可以把
     // this 指针暴露出去（在多线程编程里是要避免的）
@@ -51,7 +52,7 @@ void EventLoop::loop() {
     while (!quit_) {
         activeChannels_.clear();
         auto timeout = EPoller_->poll(1 * 1000, activeChannels_);
-        LOG_TRACE << timeout.time_since_epoch().count() << std::endl;
+        LOG_TRACE << timeout.time_since_epoch().count() << " " << activeChannels_.size() << std::endl;
         for (auto activechannel : activeChannels_) {
             activechannel->handleEvent();
         }
@@ -59,6 +60,18 @@ void EventLoop::loop() {
 
     LOG_TRACE << "EventLoop 停止了 loop" << std::endl;
     looping_ = false;
+}
+
+TimerId EventLoop::runAt(const Timer::TimePoint& time, const TimerCallback& callback) {
+    return timerQueue_->addTimer(callback, time, std::chrono::nanoseconds{});
+}
+
+TimerId EventLoop::runAfter(const std::chrono::nanoseconds delay, const TimerCallback& callback) {
+    return timerQueue_->addTimer(callback, std::chrono::system_clock::now() + delay, std::chrono::nanoseconds{});
+}
+
+TimerId EventLoop::runEvery(const std::chrono::nanoseconds interval, const TimerCallback& callback) {
+    return timerQueue_->addTimer(callback, std::chrono::system_clock::now() + interval, interval);
 }
 
 void EventLoop::abortNotInLoopThread() {
