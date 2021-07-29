@@ -15,3 +15,6 @@ target_link_libraries(reactor_test01 reactor pthread)
 
 add_executable(reactor_test02 reactor_test02.cc)
 target_link_libraries(reactor_test02 reactor pthread)
+
+add_executable(reactor_test reactor_test.cc)
+target_link_libraries(reactor_test reactor pthread)

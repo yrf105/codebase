@@ -45,6 +45,8 @@ private:
     bool insert(Timer* timer);
     void insert(std::unique_ptr<Timer>& timer);
 
+    void addTimerInLoop(Timer* timer);
+
 private:
     EventLoop* loop_;
     int timerFd_;

@@ -4,6 +4,7 @@ set(REACTOR_SRC
     EPoller.cc
     Timer.cc
     TimerQueue.cc
+    EventLoopThread.cc
 )
 
 set(REACTOR_LIB

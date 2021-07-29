@@ -69,6 +69,12 @@ TimerQueue::~TimerQueue() { ::close(timerFd_); }
 TimerId TimerQueue::addTimer(const TimerCallback& cb_, Timer::TimePoint when,
                              std::chrono::nanoseconds interval) {
     Timer* timer = new Timer(cb_, when, interval);
+    // 将添加计时器的操作转移到目标 IO 线程中，实现线程安全
+    loop_->runInLoop(std::bind(&TimerQueue::addTimerInLoop, this, timer));
+    return TimerId(timer);
+}
+
+void TimerQueue::addTimerInLoop(Timer* timer) {
     // 添加定时器只在 IO 线程里进行
     loop_->assertInLoopThread();
     bool earliestChanged = insert(timer);
@@ -77,15 +83,16 @@ TimerId TimerQueue::addTimer(const TimerCallback& cb_, Timer::TimePoint when,
         // 下一个超时的就是当前的计时器，直接把它设置进去
         detail::resetTimerFd(timerFd_, timer->expiration());
     }
-    return TimerId(timer);
 }
+
 
 void TimerQueue::cancel(TimerId timerId) {}
 
 void TimerQueue::handleRead() {
     loop_->assertInLoopThread();
     Timer::TimePoint now(std::chrono::system_clock::now());
-
+    detail::readTimerFd(timerFd_, now);
+    
     std::vector<Entry> expired = getExpired(now);
 
     for (const auto& entry : expired) {

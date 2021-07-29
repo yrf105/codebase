@@ -1,2 +1,5 @@
 add_executable(chrono_duration_test chrono_duration_test.cc)
 target_link_libraries(chrono_duration_test pthread readerwriterqueue)
+
+add_executable(thread_run_test thread_run_test.cc)
+target_link_libraries(thread_run_test pthread)
