@@ -1,26 +1,28 @@
 #include "EPoller.h"
 
-#include <sys/epoll.h>
-#include "EventLoop.h"
 #include <assert.h>
-#include "Channel.h"
+#include <sys/epoll.h>
+
 #include <iostream>
+
+#include "Channel.h"
+#include "EventLoop.h"
 #include "log.h"
 
 namespace tihi {
 
-EPoller::EPoller(EventLoop* loop) : epollFd_(::epoll_create1(EPOLL_CLOEXEC)), ownerLoop_(loop), events_(16) {
+EPoller::EPoller(EventLoop* loop)
+    : epollFd_(::epoll_create1(EPOLL_CLOEXEC)), ownerLoop_(loop), events_(16) {
     assert(epollFd_ >= 0);
 }
 
-EPoller::~EPoller() {
-    ::close(epollFd_);
-}
+EPoller::~EPoller() { ::close(epollFd_); }
 
-std::chrono::system_clock::time_point EPoller::poll(int timeoutMS, ChannelList& activeChannels) {
-    int nReady = epoll_wait(epollFd_, events_.data(), static_cast<int>(events_.size()), timeoutMS);
+std::chrono::system_clock::time_point EPoller::poll(
+    int timeoutMS, ChannelList& activeChannels) {
+    int nReady = epoll_wait(epollFd_, events_.data(),
+                            static_cast<int>(events_.size()), timeoutMS);
     if (nReady > 0) {
-
         if (nReady == static_cast<int>(events_.size())) {
             events_.resize(nReady * 2);
         }
@@ -51,7 +53,7 @@ void EPoller::updateChannel(Channel* channel) {
 
             // 为了在下面将 index 值为 -1，这里先将 fd 值为 -1
             // index 为 -1 表示该 Channel 所负责的 fd 未被 EPoller 管理
-            fd = -1; 
+            fd = -1;
         } else {
             ret = epoll_ctl(epollFd_, EPOLL_CTL_MOD, fd, &event);
         }
@@ -60,11 +62,10 @@ void EPoller::updateChannel(Channel* channel) {
     channel->set_index(fd);
 }
 
-void EPoller::assertInLoopThread() {
-    ownerLoop_->assertInLoopThread();
-}
+void EPoller::assertInLoopThread() { ownerLoop_->assertInLoopThread(); }
 
-void EPoller::fillActiveChannels(int nReady, ChannelList& activeChannels) const {
+void EPoller::fillActiveChannels(int nReady,
+                                 ChannelList& activeChannels) const {
     for (int i = 0; i < nReady; ++i) {
         Channel* channel = static_cast<Channel*>(events_[i].data.ptr);
         channel->set_revent(events_[i].events);
@@ -72,4 +73,4 @@ void EPoller::fillActiveChannels(int nReady, ChannelList& activeChannels) const 
     }
 }
 
-} // namespace tihi
+}  // namespace tihi

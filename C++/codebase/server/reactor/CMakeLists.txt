@@ -5,6 +5,10 @@ set(REACTOR_SRC
     Timer.cc
     TimerQueue.cc
     EventLoopThread.cc
+    Acceptor.cc
+    Socket.cc
+    InetAddress.cc
+    SocketsOps.cc
 )
 
 set(REACTOR_LIB

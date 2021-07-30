@@ -1,6 +1,9 @@
 #include "../EventLoop.h"
 #include <iostream>
 #include "../EventLoopThread.h"
+#include "../Acceptor.h"
+#include <iostream>
+#include "../SocketsOps.h"
 
 static void Test_runInLoop() {
     tihi::EventLoop loop;
@@ -46,11 +49,30 @@ static void Test_EventLoopThread() {
     loop->quit();
 }
 
+static void Test_Acceptor() {
+    tihi::EventLoop loop;
+    tihi::InetAddress listenAddr(12345);
+
+    tihi::Acceptor acceptor(&loop, listenAddr);
+    acceptor.setNewConnectionCallback([](int sockfd, const tihi::InetAddress& address){
+        char buf[30] = {0};
+        tihi::sockets::toHostPort(buf, sizeof(buf), address.getSockAddrInet());
+        std::cout << "收到来自 " << buf << " 的消息" << std::endl;
+        char message[] = "hello\n";
+        ::write(sockfd, message, sizeof(message));
+        tihi::sockets::close(sockfd);
+    });
+    acceptor.listen();
+
+    loop.loop();
+}
+
 int main(int argc, char** argv) {
 
     // Test_runInLoop();
     // Test_threadSafeAddTimer();
-    Test_EventLoopThread();
+    // Test_EventLoopThread();
+    Test_Acceptor();
 
     return 0;
 }
