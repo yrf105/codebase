@@ -50,7 +50,6 @@ void EPoller::updateChannel(Channel* channel) {
     } else {
         if (channel->isNoneEvent()) {
             ret = epoll_ctl(epollFd_, EPOLL_CTL_DEL, fd, nullptr);
-
             // 为了在下面将 index 值为 -1，这里先将 fd 值为 -1
             // index 为 -1 表示该 Channel 所负责的 fd 未被 EPoller 管理
             fd = -1;

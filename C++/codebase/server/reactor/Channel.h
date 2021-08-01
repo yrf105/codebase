@@ -18,6 +18,7 @@ public:
     using EventCallback = std::function<void()>;
 
     Channel(EventLoop* loop, int fd);
+    ~Channel();
 
     // 由 EventLoop 调用，负责根据 revent_ 调用 errorCallback_ 或 readCallback_ 或 writeCallback_
     void handleEvent();
@@ -30,6 +31,9 @@ public:
     }
     void setWriteCallback(const EventCallback& callback) {
         writeCallback_ = callback;
+    }
+    void setCloseCallback(const EventCallback& callback) {
+        closeCallback_ = callback;
     }
 
     void enableReading() {
@@ -94,6 +98,9 @@ private:
     EventCallback errorCallback_;
     EventCallback readCallback_;
     EventCallback writeCallback_;
+    EventCallback closeCallback_;
+
+    bool eventHandling_;
 };
 
 } // namespace tihi

@@ -30,6 +30,7 @@ public:
 
 private:
     void newConnection(int connfd, const InetAddress& peerAddr);
+    void removeConnection(const TcpConnection::SPtr& connection);
 
 private:
     using ConnectionMap = std::unordered_map<std::string, TcpConnection::SPtr>;

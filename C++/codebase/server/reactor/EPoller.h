@@ -26,6 +26,7 @@ public:
     std::chrono::system_clock::time_point  poll(int timeoutMS, ChannelList& activeChannels);
 
     void updateChannel(Channel* channel);
+    // void removeChannel(Channel* channel);
 
     EventLoop* ownerLoop() const {
         return ownerLoop_;

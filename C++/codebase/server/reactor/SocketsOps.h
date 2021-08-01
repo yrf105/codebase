@@ -41,6 +41,7 @@ void toHostPort(char* buf, size_t size, const sockaddr_in& addr);
 void fromHostPort(const char* ip, uint16_t port, sockaddr_in& addr);
 
 sockaddr_in getLocalAddr(int fd);
+int getSocketError(int fd);
 
 }  // namespace sockets
 }  // namespace tihi

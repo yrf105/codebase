@@ -21,6 +21,7 @@ public:
     using ConnectionCallback = std::function<void(const SPtr&)>;
     using MessageCallback =
         std::function<void(const SPtr&, const char* data, ssize_t len)>;
+    using CloseCallback = std::function<void(const SPtr&)>;
 
     TcpConnection(EventLoop* loop, const std::string& name, int connfd, 
                   const InetAddress& localAddr, const InetAddress& peerAddr);
@@ -42,25 +43,36 @@ public:
         return state_ == StateE::kConnected;
     }
 
+    // 连接和断开都会调用 ConnectionCallback_
     void setConnectionCallback(const ConnectionCallback& cb) {
         connectionCallback_ = cb;
     }
     void setMessageCallback(const MessageCallback& cb) {
         messageCallback_ = cb;
     }
+    void setCloseCallback(const CloseCallback& cb) {
+        closeCallback_ = cb;
+    }
 
     // 仅在连接建立时调用 1 次
     void connectEstablished();
+    // 当 TcpServer 从它的 connections_ 中移除连接是调用该函数
+    // connectDestroyed 是 TcpConnection 析构前最后调用的函数
+    void connectDestroyed();
 
 private:
     enum class StateE {
         kConnecting,
         kConnected,
+        kDisconnected,
     };
 
 private:
     void setState(StateE state) { state_ = state; };
     void handleRead();
+    void handleError();
+    void handleWrite();
+    void handleClose();
 
 private:
     EventLoop* loop_;
@@ -72,6 +84,7 @@ private:
     InetAddress peerAddr_;
     ConnectionCallback connectionCallback_;
     MessageCallback messageCallback_;
+    CloseCallback closeCallback_;
 };
 
 }  // namespace tihi

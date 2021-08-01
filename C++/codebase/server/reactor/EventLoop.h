@@ -36,7 +36,7 @@ public:
         assertInLoopThread();
         EPoller_->updateChannel(channel);
     }
-
+    
     // 在 EventLoop 所在 IO 线程中设置定时器，
     // 定时器到期时执行指定的回调函数 callback
     TimerId runAt(const Timer::TimePoint& time, const TimerCallback& callback);

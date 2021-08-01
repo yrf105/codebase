@@ -71,5 +71,17 @@ sockaddr_in getLocalAddr(int fd) {
     SOCK_LOG_ERR_IF(ret != 0, "getsockname");
     return localAddr;
 }
+
+int getSocketError(int fd) {
+    int optVal;
+    socklen_t optLen = sizeof(optVal);
+
+    if (::getsockopt(fd, SOL_SOCKET, SO_ERROR, &optVal, &optLen) < 0) {
+        return errno;
+    } else {
+        return optVal;
+    }
+}
+
 }  // namespace sockets
 }  // namespace tihi
