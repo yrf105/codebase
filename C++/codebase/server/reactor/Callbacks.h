@@ -7,6 +7,8 @@ namespace tihi {
 
 using TimerCallback = std::function<void()>;
 
+
+
 } // namespace tihi
 
 #endif // REACTOR_CALLBACKS_H

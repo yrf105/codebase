@@ -4,6 +4,7 @@
 #include "../Acceptor.h"
 #include <iostream>
 #include "../SocketsOps.h"
+#include "../TcpServer.h"
 
 static void Test_runInLoop() {
     tihi::EventLoop loop;
@@ -67,12 +68,60 @@ static void Test_Acceptor() {
     loop.loop();
 }
 
+static void Test_AcceptorTowPort() {
+    tihi::EventLoop loop;
+    tihi::InetAddress addr1(12345);
+    tihi::InetAddress addr2(13254);
+
+    tihi::Acceptor acceptor1(&loop, addr1);
+    tihi::Acceptor acceptor2(&loop, addr2);
+
+    acceptor1.setNewConnectionCallback([](int sockfd, const tihi::InetAddress& address){
+        char buf[30] = {0};
+        tihi::sockets::toHostPort(buf, sizeof(buf), address.getSockAddrInet());
+        std::cout << "收到来自 " << buf << " 的消息" << std::endl;
+        char message[] = "hello\n";
+        ::write(sockfd, message, sizeof(message));
+        tihi::sockets::close(sockfd);
+    });
+
+    acceptor2.setNewConnectionCallback([](int sockfd, const tihi::InetAddress& address){
+        char buf[30] = {0};
+        tihi::sockets::toHostPort(buf, sizeof(buf), address.getSockAddrInet());
+        std::cout << "收到来自 " << buf << " 的消息" << std::endl;
+        char message[] = "world\n";
+        ::write(sockfd, message, sizeof(message));
+        tihi::sockets::close(sockfd);
+    });
+    acceptor1.listen();
+    acceptor2.listen();
+
+    loop.loop();
+}
+
+static void TEST_TcpServer() {
+    tihi::EventLoop loop;
+    tihi::InetAddress addr(12345);
+    tihi::TcpServer tcpServer(&loop, addr);
+    tcpServer.setConnectionCallback([](const tihi::TcpConnection::SPtr& connection){
+        std::cout << connection->peerAddr().toHostPort() << " 连接" << std::endl;
+    });
+    tcpServer.setMessageCallback([](const tihi::TcpConnection::SPtr& connection, const char* data, ssize_t len){
+        std::cout << len << std::endl;
+    });
+
+    tcpServer.start();
+    loop.loop();
+}
+
 int main(int argc, char** argv) {
 
     // Test_runInLoop();
     // Test_threadSafeAddTimer();
     // Test_EventLoopThread();
-    Test_Acceptor();
+    // Test_Acceptor();
+    // Test_AcceptorTowPort();
+    TEST_TcpServer();
 
     return 0;
 }

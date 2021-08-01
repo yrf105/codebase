@@ -64,5 +64,12 @@ void fromHostPort(const char* ip, uint16_t port, sockaddr_in& addr) {
     addr.sin_port = hostToNetWork16(port);
 }
 
+sockaddr_in getLocalAddr(int fd) {
+    sockaddr_in localAddr{0};
+    socklen_t len = sizeof(localAddr);
+    int ret = ::getsockname(fd, (sockaddr*)(&localAddr), &len);
+    SOCK_LOG_ERR_IF(ret != 0, "getsockname");
+    return localAddr;
+}
 }  // namespace sockets
 }  // namespace tihi

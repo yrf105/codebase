@@ -9,6 +9,8 @@ set(REACTOR_SRC
     Socket.cc
     InetAddress.cc
     SocketsOps.cc
+    TcpServer.cc
+    TcpConnection.cc
 )
 
 set(REACTOR_LIB
