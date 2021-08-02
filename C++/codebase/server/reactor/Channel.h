@@ -4,6 +4,7 @@
 #include "boost/noncopyable.hpp"
 
 #include <functional>
+#include <chrono>
 
 namespace tihi {
 
@@ -16,17 +17,18 @@ class EventLoop;
 class Channel : public boost::noncopyable {
 public:
     using EventCallback = std::function<void()>;
+    using ReadEventCallback = std::function<void(std::chrono::system_clock::time_point)>;
 
     Channel(EventLoop* loop, int fd);
     ~Channel();
 
     // 由 EventLoop 调用，负责根据 revent_ 调用 errorCallback_ 或 readCallback_ 或 writeCallback_
-    void handleEvent();
+    void handleEvent(std::chrono::system_clock::time_point receiveTimepoint);
 
     void setErrorCallback(const EventCallback& callback) {
         errorCallback_ = callback;
     }
-    void setReadCallback(const EventCallback& callback) {
+    void setReadCallback(const ReadEventCallback& callback) {
         readCallback_ = callback;
     }
     void setWriteCallback(const EventCallback& callback) {
@@ -96,7 +98,7 @@ private:
     int idx_; // for Poller
 
     EventCallback errorCallback_;
-    EventCallback readCallback_;
+    ReadEventCallback readCallback_;
     EventCallback writeCallback_;
     EventCallback closeCallback_;
 

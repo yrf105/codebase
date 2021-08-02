@@ -65,7 +65,7 @@ void EventLoop::loop() {
         LOG_TRACE << timeout.time_since_epoch().count() << " "
                   << activeChannels_.size() << std::endl;
         for (auto activechannel : activeChannels_) {
-            activechannel->handleEvent();
+            activechannel->handleEvent(timeout);
         }
         doPendingFunctors();
     }

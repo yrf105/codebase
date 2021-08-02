@@ -11,6 +11,7 @@ set(REACTOR_SRC
     SocketsOps.cc
     TcpServer.cc
     TcpConnection.cc
+    Buffer.cc
 )
 
 set(REACTOR_LIB

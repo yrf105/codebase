@@ -27,7 +27,7 @@ Channel::~Channel() {
 }
 
 
-void Channel::handleEvent() {
+void Channel::handleEvent(std::chrono::system_clock::time_point receiveTimepoint) {
     eventHandling_ = true;
 
     // EPOLLHUP 表示读写都关闭，或读到文件结尾会收到 EPOLLHUP 事件
@@ -40,7 +40,7 @@ void Channel::handleEvent() {
     // EPOLLRDHUP 表示读关闭 https://blog.csdn.net/zhouguoqionghai/article/details/94591475
     if (revent_ & (EPOLLIN | EPOLLRDHUP | EPOLLPRI)) {
         if (readCallback_) {
-            readCallback_();
+            readCallback_(receiveTimepoint);
         }
     }
     if (revent_ & (EPOLLERR)) {

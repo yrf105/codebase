@@ -16,7 +16,7 @@ TcpConnection::TcpConnection(EventLoop* loop, const std::string& name,
       channel_(new Channel(loop, connfd)),
       localAddr_(localAddr),
       peerAddr_(peerAddr) {
-    channel_->setReadCallback(std::bind(&TcpConnection::handleRead, this));
+    channel_->setReadCallback(std::bind(&TcpConnection::handleRead, this, std::placeholders::_1));
     channel_->setErrorCallback(std::bind(&TcpConnection::handleError, this));
     channel_->setCloseCallback(std::bind(&TcpConnection::closeCallback_, this));
     channel_->setWriteCallback(std::bind(&TcpConnection::handleWrite, this));
@@ -33,14 +33,16 @@ void TcpConnection::connectEstablished() {
     connectionCallback_(shared_from_this());
 }
 
-void TcpConnection::handleRead() {
-    char buffer[65536];
-    ssize_t n = ::read(socket_->fd(), buffer, sizeof buffer);
+void TcpConnection::handleRead(std::chrono::system_clock::time_point receiveTimepoint) {
+    int savedErrno = 0;
+    ssize_t n = inputBuffer_.readFd(socket_->fd(), &savedErrno);
     if (n > 0) {
-        messageCallback_(shared_from_this(), buffer, n);
+        messageCallback_(shared_from_this(), &inputBuffer_, receiveTimepoint);
     } else if (n == 0) {
         handleClose();
     } else if (n < 0) {
+        errno = savedErrno;
+        LOG_TRACE << "TcpConnection::handleRead error" << std::endl;
         handleError();
     }
 }

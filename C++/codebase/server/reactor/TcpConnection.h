@@ -7,10 +7,13 @@
 #include "Channel.h"
 #include "InetAddress.h"
 #include "Socket.h"
+#include "Timer.h"
+#include "Buffer.h"
 
 namespace tihi {
 
 class EventLoop;
+class Buffer;
 
 // 1. TcpConnection 表示一次连接，一旦断开就没啥用了
 // 2. TcpConnection 没有发起连接的功能，它接受一个已连接的 fd
@@ -20,7 +23,7 @@ public:
     using SPtr = std::shared_ptr<TcpConnection>;
     using ConnectionCallback = std::function<void(const SPtr&)>;
     using MessageCallback =
-        std::function<void(const SPtr&, const char* data, ssize_t len)>;
+        std::function<void(const SPtr&, Buffer*, Timer::TimePoint)>;
     using CloseCallback = std::function<void(const SPtr&)>;
 
     TcpConnection(EventLoop* loop, const std::string& name, int connfd, 
@@ -69,7 +72,7 @@ private:
 
 private:
     void setState(StateE state) { state_ = state; };
-    void handleRead();
+    void handleRead(std::chrono::system_clock::time_point receiveTimepoint);
     void handleError();
     void handleWrite();
     void handleClose();
@@ -85,6 +88,7 @@ private:
     ConnectionCallback connectionCallback_;
     MessageCallback messageCallback_;
     CloseCallback closeCallback_;
+    Buffer inputBuffer_;
 };
 
 }  // namespace tihi

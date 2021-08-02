@@ -99,6 +99,8 @@ static void Test_AcceptorTowPort() {
     loop.loop();
 }
 
+tihi::Buffer buf;
+
 static void TEST_TcpServer() {
     tihi::EventLoop loop;
     tihi::InetAddress addr(12345);
@@ -106,8 +108,8 @@ static void TEST_TcpServer() {
     tcpServer.setConnectionCallback([](const tihi::TcpConnection::SPtr& connection){
         std::cout << connection->peerAddr().toHostPort() << " 连接" << std::endl;
     });
-    tcpServer.setMessageCallback([](const tihi::TcpConnection::SPtr& connection, const char* data, ssize_t len){
-        std::cout << len << std::endl;
+    tcpServer.setMessageCallback([](const tihi::TcpConnection::SPtr& connection, tihi::Buffer* buf, std::chrono::system_clock::time_point receiveTimepoint){
+        std::cout << buf->retrieveAsString();
     });
 
     tcpServer.start();
