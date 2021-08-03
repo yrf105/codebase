@@ -88,7 +88,7 @@ public:
     }
 
     void ensureWritableBytes(size_t len) {
-        if (writerIndex_ + len < buffer_.size()) {
+        if (writerIndex_ + len > buffer_.size()) {
             makeSpace(len);
         }
         assert(writableBytes() >= len);
@@ -127,11 +127,15 @@ private:
         if (readerIndex_ + writableBytes() < len + kCheapPrepend) {
             buffer_.resize(len + writerIndex_);
         } else {
+            std::cout << "往前移动数据" << std::endl;
             // 往前移动可读区域，腾出可写区域
             size_t readable = readableBytes();
-            std::copy(begin() + readerIndex_,
-                      begin() + writerIndex_,
+            std::move(begin() + readerIndex_,
+                      begin() + writerIndex_, 
                       begin() + kCheapPrepend);
+            // std::copy(begin() + readerIndex_,
+            //           begin() + writerIndex_,
+            //           begin() + kCheapPrepend);
             readerIndex_ = kCheapPrepend;
             writerIndex_ = readerIndex_ + readable;
             assert(writableBytes() == readable);

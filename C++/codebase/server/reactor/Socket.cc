@@ -39,4 +39,15 @@ void Socket::setReuseAddr(bool on) {
     assert(ret == 0);
 }
 
+void Socket::shutdownWrite() {
+    int ret = ::shutdown(fd_, SHUT_WR);
+    assert(ret == 0);
+}
+
+void Socket::shutdownRead() {
+    int ret = ::shutdown(fd_, SHUT_RD);
+    assert(ret == 0);
+}
+
+
 }  // namespace tihi

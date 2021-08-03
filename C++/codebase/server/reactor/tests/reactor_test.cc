@@ -116,6 +116,35 @@ static void TEST_TcpServer() {
     loop.loop();
 }
 
+static void TEST_TcpConnectionSend() {
+    tihi::EventLoop loop;
+    tihi::InetAddress addr(12345);
+    tihi::TcpServer server(&loop, addr);
+
+    std::string message1;
+    for (int i = 0; i < 1024 * 1024 + 4; ++i) {
+        message1 += "Y";
+    }
+    std::string message2 = "hello Y";
+
+    server.setConnectionCallback([](const tihi::TcpConnection::SPtr& connection){
+        std::cout << connection->peerAddr().toHostPort() << " 连接" << std::endl;
+    });
+
+    server.setMessageCallback([&message1, &message2](const tihi::TcpConnection::SPtr& connection, tihi::Buffer* buf, std::chrono::system_clock::time_point receiveTimepoint){
+        if (connection->connected()) {
+            std::cout << buf->retrieveAsString();
+            connection->send(message1);
+            connection->send(message2);
+            connection->shutdown();
+        }
+    });
+
+    server.start();
+    loop.loop();
+
+}
+
 int main(int argc, char** argv) {
 
     // Test_runInLoop();
@@ -123,7 +152,9 @@ int main(int argc, char** argv) {
     // Test_EventLoopThread();
     // Test_Acceptor();
     // Test_AcceptorTowPort();
-    TEST_TcpServer();
+    // TEST_TcpServer();
+
+    TEST_TcpConnectionSend();
 
     return 0;
 }

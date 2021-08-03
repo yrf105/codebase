@@ -63,10 +63,14 @@ public:
     // connectDestroyed 是 TcpConnection 析构前最后调用的函数
     void connectDestroyed();
 
+    void send(const std::string& message);
+    void shutdown();
+
 private:
     enum class StateE {
         kConnecting,
         kConnected,
+        kDisconnecting,
         kDisconnected,
     };
 
@@ -76,6 +80,9 @@ private:
     void handleError();
     void handleWrite();
     void handleClose();
+
+    void sendInloop(const std::string& message);
+    void shutdownInloop();
 
 private:
     EventLoop* loop_;
@@ -89,6 +96,7 @@ private:
     MessageCallback messageCallback_;
     CloseCallback closeCallback_;
     Buffer inputBuffer_;
+    Buffer outputBuffer_;
 };
 
 }  // namespace tihi

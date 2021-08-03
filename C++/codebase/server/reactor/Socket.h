@@ -28,6 +28,10 @@ public:
     
     void setReuseAddr(bool on);
 
+    void shutdownRead();
+
+    void shutdownWrite();
+
 private:
     const int fd_;
 

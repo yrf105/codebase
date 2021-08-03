@@ -55,6 +55,10 @@ public:
         update();
     }
 
+    bool isWriting() const {
+        return event_ & kWriteEvent;
+    }
+
     int fd() const {
         return fd_;
     }
