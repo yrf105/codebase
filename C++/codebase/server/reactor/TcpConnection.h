@@ -9,6 +9,7 @@
 #include "Socket.h"
 #include "Timer.h"
 #include "Buffer.h"
+#include <sys/signal.h>
 
 namespace tihi {
 
@@ -25,6 +26,7 @@ public:
     using MessageCallback =
         std::function<void(const SPtr&, Buffer*, Timer::TimePoint)>;
     using CloseCallback = std::function<void(const SPtr&)>;
+    using WriteCompleteCallback = std::function<void(const SPtr&)>;
 
     TcpConnection(EventLoop* loop, const std::string& name, int connfd, 
                   const InetAddress& localAddr, const InetAddress& peerAddr);
@@ -57,6 +59,11 @@ public:
         closeCallback_ = cb;
     }
 
+    // 设置低水位回调函数，当发送缓冲区为空时会调用所指定的回调函数
+    void setWriteCompleteCallback(const WriteCompleteCallback& cb) {
+        writeCompleteCallback_ = cb;
+    } 
+
     // 仅在连接建立时调用 1 次
     void connectEstablished();
     // 当 TcpServer 从它的 connections_ 中移除连接是调用该函数
@@ -65,6 +72,9 @@ public:
 
     void send(const std::string& message);
     void shutdown();
+
+    void setTcpNoDelay(bool on);
+    void setTcpKeepAlive(bool on);
 
 private:
     enum class StateE {
@@ -95,8 +105,16 @@ private:
     ConnectionCallback connectionCallback_;
     MessageCallback messageCallback_;
     CloseCallback closeCallback_;
+    WriteCompleteCallback writeCompleteCallback_;
     Buffer inputBuffer_;
     Buffer outputBuffer_;
+};
+
+class IgnoreSigPipe {
+public:
+    IgnoreSigPipe() {
+        ::signal(SIGPIPE, SIG_IGN);
+    }
 };
 
 }  // namespace tihi

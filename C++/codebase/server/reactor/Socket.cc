@@ -3,6 +3,7 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
+#include <netinet/tcp.h> // TCP_NODELAY
 #include <assert.h>
 #include <string.h>
 
@@ -47,6 +48,16 @@ void Socket::shutdownWrite() {
 void Socket::shutdownRead() {
     int ret = ::shutdown(fd_, SHUT_RD);
     assert(ret == 0);
+}
+
+void Socket::setTcpNoDelay(bool on) {
+    int optVal = on ? 1 : 0;
+    ::setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &optVal, sizeof(optVal));
+}
+
+void Socket::setTcpKeepAlive(bool on) {
+    int optVal = on ? 1 : 0;
+    ::setsockopt(fd_, SOL_SOCKET, SO_KEEPALIVE, &optVal, sizeof(optVal));
 }
 
 

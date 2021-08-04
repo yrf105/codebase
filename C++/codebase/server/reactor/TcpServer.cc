@@ -48,6 +48,7 @@ void TcpServer::newConnection(int connfd, const InetAddress& peerAddr) {
     conn->setMessageCallback(messageCallback_);
     conn->setCloseCallback(
         std::bind(&TcpServer::removeConnection, this, std::placeholders::_1));
+    conn->setWriteCompleteCallback(writeCompleteCallback_);
     conn->connectEstablished();
 }
 

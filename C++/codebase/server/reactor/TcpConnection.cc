@@ -74,6 +74,9 @@ void TcpConnection::handleWrite() {
             outputBuffer_.retrieve(n);
             if (outputBuffer_.readableBytes() == 0) {
                 channel_->disableWriting();
+                if (writeCompleteCallback_) {
+                    loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
+                }
                 if (state_ == StateE::kDisconnecting) {
                     shutdownInloop();
                 }
@@ -116,6 +119,9 @@ void TcpConnection::sendInloop(const std::string& message) {
         if (nwrote >= 0) {
             if (static_cast<size_t>(nwrote) < message.size()) {
                 LOG_TRACE << "没有发完，还有更多的数据需要发送" << std::endl;
+            } else if (writeCompleteCallback_) {
+                // writeCompleteCallback_(shared_from_this());
+                loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
             }
         } else {
             nwrote = 0;
@@ -148,5 +154,16 @@ void TcpConnection::shutdownInloop() {
         socket_->shutdownWrite();
     }
 }
+
+void TcpConnection::setTcpNoDelay(bool on) {
+    socket_->setTcpNoDelay(on);
+}
+
+void TcpConnection::setTcpKeepAlive(bool on) {
+    socket_->setTcpKeepAlive(on);
+}
+
+// 利用全局对象初始化在程序开始之前就忽略 SIGPIPIE
+IgnoreSigPipe __ignoreSigPipeObj;
 
 }  // namespace tihi

@@ -32,6 +32,9 @@ public:
 
     void shutdownWrite();
 
+    void setTcpNoDelay(bool on);
+    void setTcpKeepAlive(bool on);
+
 private:
     const int fd_;
 

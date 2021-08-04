@@ -27,6 +27,10 @@ public:
     void setMessageCallback(const TcpConnection::MessageCallback& cb) {
         messageCallback_ = cb;
     }
+    // 设置低水位回调函数，当发送缓冲区为空时会调用所指定的回调函数
+    void setWriteCompleteCallback(const TcpConnection::WriteCompleteCallback& cb) {
+        writeCompleteCallback_ = cb;
+    }
 
 private:
     void newConnection(int connfd, const InetAddress& peerAddr);
@@ -40,6 +44,7 @@ private:
     std::unique_ptr<Acceptor> acceptorUPtr_;
     TcpConnection::ConnectionCallback connectionCallback_;
     TcpConnection::MessageCallback messageCallback_;
+    TcpConnection::WriteCompleteCallback writeCompleteCallback_;
     bool started_;
     int nextConnId_;
     ConnectionMap connections_;
