@@ -9,6 +9,7 @@
 #include <memory>
 #include <string>
 #include "InetAddress.h"
+#include "EventLoopThreadPool.h"
 
 namespace tihi {
 
@@ -32,9 +33,12 @@ public:
         writeCompleteCallback_ = cb;
     }
 
+    void setThreadNum(int numThreads);
+
 private:
     void newConnection(int connfd, const InetAddress& peerAddr);
     void removeConnection(const TcpConnection::SPtr& connection);
+    void removeConnectionInLoop(const TcpConnection::SPtr& connection);
 
 private:
     using ConnectionMap = std::unordered_map<std::string, TcpConnection::SPtr>;
@@ -48,6 +52,7 @@ private:
     bool started_;
     int nextConnId_;
     ConnectionMap connections_;
+    std::unique_ptr<EventLoopThreadPool> pool_;
 };
 
 } // namespace tihi
