@@ -45,7 +45,7 @@ void TcpServer::newConnection(int connfd, const InetAddress& peerAddr) {
     // localAddr, peerAddr);
     EventLoop* ioLoop = pool_->getNextLoop();
     TcpConnection::SPtr conn = TcpConnection::SPtr(
-        new TcpConnection(loop_, connName, connfd, localAddr, peerAddr));
+        new TcpConnection(ioLoop, connName, connfd, localAddr, peerAddr));
     connections_[connName] = conn;
     conn->setConnectionCallback(connectionCallback_);
     conn->setMessageCallback(messageCallback_);
@@ -75,7 +75,7 @@ void TcpServer::removeConnectionInLoop(const TcpConnection::SPtr& connection) {
 }
 
 void TcpServer::setThreadNum(int numThreads) {
-    loop_->assertInLoopThread();
+    assert(numThreads >= 0);
     pool_->setThreadNum(numThreads);
 }
 

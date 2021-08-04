@@ -128,18 +128,19 @@ static void TEST_TcpConnectionSend() {
     std::string message2 = "hello Y";
 
     server.setConnectionCallback([](const tihi::TcpConnection::SPtr& connection){
-        std::cout << connection->peerAddr().toHostPort() << " 连接" << std::endl;
+        std::cout <<  std::this_thread::get_id() << " " << connection->peerAddr().toHostPort() << " 连接" << std::endl;
     });
 
     server.setMessageCallback([&message1, &message2](const tihi::TcpConnection::SPtr& connection, tihi::Buffer* buf, std::chrono::system_clock::time_point receiveTimepoint){
         if (connection->connected()) {
-            std::cout << buf->retrieveAsString();
+            std::cout << std::this_thread::get_id() << " " << buf->retrieveAsString();
             connection->send(message1);
             connection->send(message2);
             connection->shutdown();
         }
     });
 
+    server.setThreadNum(2);
     server.start();
     loop.loop();
 

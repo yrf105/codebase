@@ -29,6 +29,7 @@ EventLoop* EventLoopThreadPool::getNextLoop() {
 
     if (!loops_.empty()) {
         loop = loops_[next_];
+        ++next_;
         if (static_cast<size_t>(next_) >= loops_.size()) {
             next_ = 0;
         }
