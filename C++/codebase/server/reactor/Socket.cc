@@ -34,6 +34,15 @@ int Socket::accept(InetAddress& peerAddr) {
     return connfd;
 }
 
+int Socket::connect(InetAddress& peerAddr) {
+    sockaddr_in addr{0};
+    int ret = sockets::connect(fd_, &addr);
+    if (ret == 0) {
+        peerAddr.setSockAddrInet(addr);
+    }
+    return ret;
+}
+
 void Socket::setReuseAddr(bool on) {
     int opVal = on ? 1 : 0;
     int ret = ::setsockopt(fd_, SOL_SOCKET, SO_REUSEADDR, &opVal, sizeof(opVal));

@@ -26,6 +26,8 @@ public:
     // 出错返回 -1
     int accept(InetAddress& peerAddr);
     
+    int connect(InetAddress& peerAddr);
+
     void setReuseAddr(bool on);
 
     void shutdownRead();

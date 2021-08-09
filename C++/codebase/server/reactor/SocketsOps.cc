@@ -27,8 +27,7 @@ int createNonblocking() {
 }
 
 void bind(int listenfd, const sockaddr_in* addr) {
-    int ret =
-        ::bind(listenfd, (sockaddr*)(addr), sizeof(*addr));
+    int ret = ::bind(listenfd, (sockaddr*)(addr), sizeof(*addr));
     SOCK_LOG_ERR_IF(ret < 0, "bind()");
 }
 
@@ -44,6 +43,11 @@ int accpet(int listenfd, sockaddr_in* addr) {
     return connfd;  // 这里不会直接终止程序
 }
 
+int connect(int sockfd, const sockaddr_in* addr) {
+    return ::connect(sockfd, (sockaddr*)(addr), sizeof(*addr));
+}
+
+
 void close(int sockfd) {
     int ret = ::close(sockfd);
     SOCK_LOG_ERR_IF(ret < 0, "close()");
@@ -51,7 +55,8 @@ void close(int sockfd) {
 
 void toHostPort(char* buf, size_t size, const sockaddr_in& addr) {
     char host[INET_ADDRSTRLEN] = "INVALID";
-    const char* ret = inet_ntop(AF_INET, &(addr.sin_addr), host, INET_ADDRSTRLEN);
+    const char* ret =
+        inet_ntop(AF_INET, &(addr.sin_addr), host, INET_ADDRSTRLEN);
     SOCK_LOG_ERR_IF(ret == NULL, "inet_ntop");
     uint16_t port = netWorkToHost16(addr.sin_port);
     ::snprintf(buf, size, "%s:%d", host, port);
@@ -72,6 +77,14 @@ sockaddr_in getLocalAddr(int fd) {
     return localAddr;
 }
 
+sockaddr_in getPeerAddr(int fd) {
+    sockaddr_in peerAddr{0};
+    socklen_t len = sizeof(peerAddr);
+    int ret = ::getpeername(fd, (sockaddr*)(&peerAddr), &len);
+    SOCK_LOG_ERR_IF(ret != 0, "getpeername");
+    return peerAddr;
+}
+
 int getSocketError(int fd) {
     int optVal;
     socklen_t optLen = sizeof(optVal);
@@ -81,6 +94,13 @@ int getSocketError(int fd) {
     } else {
         return optVal;
     }
+}
+
+bool isSelfConnection(int fd) {
+    sockaddr_in localAddr = getLocalAddr(fd);
+    sockaddr_in peerAddr = getPeerAddr(fd);
+    return localAddr.sin_port == peerAddr.sin_port &&
+           localAddr.sin_addr.s_addr == peerAddr.sin_addr.s_addr;
 }
 
 }  // namespace sockets

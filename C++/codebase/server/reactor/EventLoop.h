@@ -42,6 +42,7 @@ public:
     TimerId runAt(const Timer::TimePoint& time, const TimerCallback& callback);
     TimerId runAfter(const std::chrono::nanoseconds delay, const TimerCallback& callback);
     TimerId runEvery(const std::chrono::nanoseconds interval, const TimerCallback& callback);
+    void cancelTimer(TimerId timerId);
 
     // 1. 在当前 IO 线程的中执行 cb 用户回调
     // 2. 当其他线程希望向指定线程添加定时任务时，

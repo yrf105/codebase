@@ -13,6 +13,8 @@ set(REACTOR_SRC
     TcpConnection.cc
     Buffer.cc
     EventLoopThreadPool.cc
+    Connector.cc
+    TcpClient.cc
 )
 
 set(REACTOR_LIB

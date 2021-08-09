@@ -92,6 +92,10 @@ TimerId EventLoop::runEvery(const std::chrono::nanoseconds interval,
         callback, std::chrono::system_clock::now() + interval, interval);
 }
 
+void EventLoop::cancelTimer(TimerId timerId) {
+    timerQueue_->cancel(timerId);
+}
+
 void EventLoop::runInLoop(const Functor& cb) {
     if (isInLoopThread()) {
         cb();
@@ -159,6 +163,5 @@ void EventLoop::handleRead() {
         LOG_TRACE << "EventLoop::handleRead() error" << std::endl;
     }
 }
-
 
 }  // namespace tihi

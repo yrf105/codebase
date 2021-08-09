@@ -32,20 +32,25 @@ public:
     void cancel(TimerId timerId);
 
 private:
-    using Entry = std::pair<Timer::TimePoint, std::unique_ptr<Timer>>;
+    using Entry = std::pair<Timer::TimePoint, Timer*>;
     using TimerList = std::set<Entry>;
+    using ActiveTimer = std::pair<Timer*, uint64_t>;
+    using ActiveTimerSet = std::set<ActiveTimer>;
 
     // 处理 timerfd 上的可读事件
     void handleRead();
-    // 返回所有到期的定时器
+    // 获得所有到期的定时器
     std::vector<Entry> getExpired(Timer::TimePoint now);
     
+    // 对 expired 中需要重复的 timer 重新进行设置
     void reset(std::vector<Entry>& expired, Timer::TimePoint now);
 
     bool insert(Timer* timer);
-    void insert(std::unique_ptr<Timer>& timer);
+    // void insert(std::unique_ptr<Timer>& timer);
 
     void addTimerInLoop(Timer* timer);
+
+    void cancelInLoop(TimerId timerId);
 
 private:
     EventLoop* loop_;
@@ -53,6 +58,15 @@ private:
     Channel timerFdChannel_;
     // 根据到期时间排序的计时器列表
     TimerList timers_;
+
+    // for cancel()
+    std::atomic<bool> callingExpiredTimers_;
+    // TimerId 不负责其所代表的 Timer 的生命周期，
+    // 要通过 TimerId 删除某个定时器，
+    // 就要现在 activeTimers_ 中找到它
+    ActiveTimerSet activeTimers_;
+    // 自删除的 timer 会被添加到 cancelingTimers_ 中
+    ActiveTimerSet cancelingTimers_;
 };
 
 } // namespace tihi

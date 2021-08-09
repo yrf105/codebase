@@ -5,6 +5,7 @@
 #include <iostream>
 #include "../SocketsOps.h"
 #include "../TcpServer.h"
+#include "../Connector.h"
 
 static void Test_runInLoop() {
     tihi::EventLoop loop;
@@ -143,7 +144,20 @@ static void TEST_TcpConnectionSend() {
     server.setThreadNum(2);
     server.start();
     loop.loop();
+}
 
+static void Test_Connector() {
+    tihi::InetAddress addr("220.181.38.251", 80);
+    tihi::EventLoop loop;
+    tihi::Connector connector(&loop, addr);
+
+    connector.setNewConnectionCallback_([&loop](int fd){
+        std::cout << fd << " 已连接" << std::endl;
+        loop.quit();
+    });
+
+    connector.start();
+    loop.loop();
 }
 
 int main(int argc, char** argv) {
@@ -155,7 +169,9 @@ int main(int argc, char** argv) {
     // Test_AcceptorTowPort();
     // TEST_TcpServer();
 
-    TEST_TcpConnectionSend();
+    // TEST_TcpConnectionSend();
+
+    Test_Connector();
 
     return 0;
 }

@@ -3,3 +3,6 @@ target_link_libraries(chrono_duration_test pthread readerwriterqueue)
 
 add_executable(thread_run_test thread_run_test.cc)
 target_link_libraries(thread_run_test pthread)
+
+add_executable(static_const_int_test static_const_int_test.cc)
+target_link_libraries(static_const_int_test pthread)
