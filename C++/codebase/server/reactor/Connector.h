@@ -17,12 +17,14 @@ class InetAddress;
 
 class Connector : public boost::noncopyable {
 public:
+    using SPtr = std::shared_ptr<Connector>;
+
     using NewConnectionCallback = std::function<void(int fd)>;
 
     Connector(EventLoop* loop, const InetAddress& addr);
     ~Connector();
 
-    void setNewConnectionCallback_(const NewConnectionCallback& cb ) {
+    void setNewConnectionCallback(const NewConnectionCallback& cb ) {
         newConnectionCallback_ = cb;
     }
 
