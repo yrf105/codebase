@@ -51,6 +51,7 @@ private:
 private:
     EventLoop* loop_;
     Connector::SPtr connector_;
+    
     TcpConnection::ConnectionCallback connectionCallback_;
     TcpConnection::MessageCallback messageCallback_;
     TcpConnection::WriteCompleteCallback writeCompleteCallback_;

@@ -86,11 +86,14 @@ void Connector::connect() {
 void Connector::connecting(int sockfd) {
     setState(States::kConnecting);
     assert(!channel_);
+
     channel_.reset(new Channel(loop_, sockfd));
     channel_->setWriteCallback(std::bind(&Connector::handleWrite, this));
     channel_->setErrorCallback(std::bind(&Connector::handleError, this));
     // 连接建立会触发可写事件
     channel_->enableWriting();
+
+    LOG_TRACE << "sockfd: " << sockfd << " connecting...  等待可读事件" << std::endl;
 }
 
 void Connector::retry(int sockfd) {
@@ -144,7 +147,7 @@ void Connector::handleWrite() {
 
 int Connector::removeAndResetChannel() {
     channel_->disableAll();
-    loop_->updateChannel(channel_.get());
+    // loop_->updateChannel(channel_.get()); // 加这句会重复删除监听描述符
     int sockfd = channel_->fd();
     // 不能直接 reset channel 因为现在在 channel 的回调函数里
     loop_->queueInLoop(std::bind(&Connector::resetChannel, this));

@@ -45,7 +45,9 @@ void EPoller::updateChannel(Channel* channel) {
     event.events = static_cast<uint32_t>(channel->event());
     int ret = 0;
 
-    if (channel->index() < 0) {
+    LOG_TRACE << "channel: " << channel << " fd: " << fd << " index: " << channel->index() << " event:" << channel->event() << std::endl;
+
+    if (channel->index() < 0 && !channel->isNoneEvent()) {
         ret = epoll_ctl(epollFd_, EPOLL_CTL_ADD, fd, &event);
     } else {
         if (channel->isNoneEvent()) {
@@ -57,6 +59,7 @@ void EPoller::updateChannel(Channel* channel) {
             ret = epoll_ctl(epollFd_, EPOLL_CTL_MOD, fd, &event);
         }
     }
+  
     assert(ret >= 0);
     channel->set_index(fd);
 }

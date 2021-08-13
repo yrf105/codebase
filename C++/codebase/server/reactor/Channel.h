@@ -51,6 +51,9 @@ public:
         update();
     }
     void disableAll() {
+        if (event_ == kNoneEvent) {
+            return ;
+        }
         event_ = kNoneEvent;
         update();
     }

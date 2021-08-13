@@ -18,3 +18,6 @@ target_link_libraries(reactor_test02 reactor pthread)
 
 add_executable(reactor_test reactor_test.cc)
 target_link_libraries(reactor_test reactor pthread)
+
+add_executable(TcpClient_test TcpClient_test.cc)
+target_link_libraries(TcpClient_test reactor pthread)

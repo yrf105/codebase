@@ -21,6 +21,7 @@ public:
 
 private:
     EventLoop* baseLoop_;
+    
     bool started_;
     int numThreads_;
     int next_;

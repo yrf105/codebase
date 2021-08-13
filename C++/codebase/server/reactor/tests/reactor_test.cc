@@ -151,7 +151,7 @@ static void Test_Connector() {
     tihi::EventLoop loop;
     tihi::Connector connector(&loop, addr);
 
-    connector.setNewConnectionCallback_([&loop](int fd){
+    connector.setNewConnectionCallback([&loop](int fd){
         std::cout << fd << " 已连接" << std::endl;
         loop.quit();
     });

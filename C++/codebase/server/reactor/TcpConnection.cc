@@ -56,7 +56,7 @@ void TcpConnection::connectDestroyed() {
     channel_->disableAll();  // 可能不经过 handleClose 直接调用 connectDestroyed
     connectionCallback_(shared_from_this());
 
-    loop_->updateChannel(channel_.get());
+    // loop_->updateChannel(channel_.get());
 }
 
 
@@ -93,6 +93,7 @@ void TcpConnection::handleWrite() {
 
 // 被 TcpServer::removeConnection 调用
 void TcpConnection::handleClose() {
+    LOG_TRACE << "TcpConnection::handleClose" << std::endl;
     loop_->assertInLoopThread();
     assert(state_ == StateE::kConnected || state_ == StateE::kDisconnecting);
     channel_->disableAll();
