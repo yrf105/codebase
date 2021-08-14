@@ -29,7 +29,7 @@ std::chrono::system_clock::time_point EPoller::poll(
 
         fillActiveChannels(nReady, activeChannels);
     } else if (nReady == 0) {
-        LOG_TRACE << "没有事件发生" << std::endl;
+        // LOG_TRACE << "没有事件发生" << std::endl;
     } else {
         LOG_TRACE << "有错误发生" << std::endl;
     }

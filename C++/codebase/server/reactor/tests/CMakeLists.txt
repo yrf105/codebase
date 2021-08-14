@@ -21,3 +21,9 @@ target_link_libraries(reactor_test reactor pthread)
 
 add_executable(TcpClient_test TcpClient_test.cc)
 target_link_libraries(TcpClient_test reactor pthread)
+
+add_executable(Connector_test Connector_test.cc)
+target_link_libraries(Connector_test reactor pthread)
+
+add_executable(TcpServer_test TcpServer_test.cc)
+target_link_libraries(TcpServer_test reactor pthread)

@@ -62,8 +62,8 @@ void EventLoop::loop() {
     while (!quit_) {
         activeChannels_.clear();
         auto timeout = EPoller_->poll(1 * 1000, activeChannels_);
-        LOG_TRACE << timeout.time_since_epoch().count() << " "
-                  << activeChannels_.size() << std::endl;
+        // LOG_TRACE << timeout.time_since_epoch().count() << " "
+        //           << activeChannels_.size() << std::endl;
         for (auto activechannel : activeChannels_) {
             activechannel->handleEvent(timeout);
         }

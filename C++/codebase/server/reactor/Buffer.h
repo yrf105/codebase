@@ -138,7 +138,7 @@ private:
             //           begin() + kCheapPrepend);
             readerIndex_ = kCheapPrepend;
             writerIndex_ = readerIndex_ + readable;
-            assert(writableBytes() == readable);
+            assert(readableBytes() == readable);
         }
     }
 
