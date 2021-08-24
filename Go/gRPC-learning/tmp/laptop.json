@@ -1,0 +1,62 @@
+{
+ "id": "3b76f249-f526-41be-983b-df4a4935a3f8",
+ "brand": "Dell",
+ "name": "Vostro",
+ "cpu": {
+  "name": "Core i5-9400F",
+  "brand": "Intel",
+  "number_cores": 8,
+  "number_threads": 8,
+  "min_ghz": 3.5503192878962966,
+  "max_ghz": 3.7761509785127236
+ },
+ "ram": {
+  "value": "15",
+  "unit": "GIGABYTE"
+ },
+ "gpus": [
+  {
+   "name": "RX 590",
+   "brand": "AMD",
+   "min_ghz": 1.233522012241799,
+   "max_ghz": 1.4681282054722196,
+   "memory": {
+    "value": "8",
+    "unit": "GIGABYTE"
+   }
+  }
+ ],
+ "storages": [
+  {
+   "memory": {
+    "value": "493",
+    "unit": "GIGABYTE"
+   },
+   "driver": "SSD"
+  },
+  {
+   "memory": {
+    "value": "2",
+    "unit": "TERABYTE"
+   },
+   "driver": "HDD"
+  }
+ ],
+ "screen": {
+  "size_inch": 13.84444,
+  "resolution": {
+   "width": 2045,
+   "height": 1150
+  },
+  "panel": "OLED",
+  "multitouch": false
+ },
+ "keyboard": {
+  "layout": "UNKNOWN",
+  "backlit": false
+ },
+ "weight_kg": 1.0106599244032046,
+ "price_usd": 724.7868450291801,
+ "release_year": 2021,
+ "updated_at": "2021-08-02T13:39:43.555830800Z"
+}

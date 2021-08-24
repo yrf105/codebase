@@ -2,22 +2,23 @@
 #define REACTOR_TCPSERVER_H
 
 #include <boost/noncopyable.hpp>
-#include <unordered_map>
-#include "Acceptor.h"
-#include "TcpConnection.h"
-#include "Callbacks.h"
 #include <memory>
 #include <string>
-#include "InetAddress.h"
-#include "EventLoopThreadPool.h"
+#include <unordered_map>
+
+#include "TcpConnection.h"
 
 namespace tihi {
 
 class EventLoop;
+class Acceptor;
+class EventLoopThreadPool;
+class InetAddress;
 
 class TcpServer : public boost::noncopyable {
 public:
-    TcpServer(EventLoop* loop, const InetAddress& listenAddr, const std::string& name = "");
+    TcpServer(EventLoop* loop, const InetAddress& listenAddr,
+              const std::string& name = "");
     ~TcpServer();
 
     void start();
@@ -29,7 +30,8 @@ public:
         messageCallback_ = cb;
     }
     // 设置低水位回调函数，当发送缓冲区为空时会调用所指定的回调函数
-    void setWriteCompleteCallback(const TcpConnection::WriteCompleteCallback& cb) {
+    void setWriteCompleteCallback(
+        const TcpConnection::WriteCompleteCallback& cb) {
         writeCompleteCallback_ = cb;
     }
 
@@ -50,13 +52,13 @@ private:
     TcpConnection::ConnectionCallback connectionCallback_;
     TcpConnection::MessageCallback messageCallback_;
     TcpConnection::WriteCompleteCallback writeCompleteCallback_;
-    
+
     bool started_;
     int nextConnId_;
     ConnectionMap connections_;
     std::unique_ptr<EventLoopThreadPool> pool_;
 };
 
-} // namespace tihi
+}  // namespace tihi
 
-#endif // REACTOR_TCPSERVER_H
+#endif  // REACTOR_TCPSERVER_H

@@ -3,6 +3,9 @@
 #include "EventLoop.h"
 #include "SocketsOps.h"
 #include "log.h"
+#include "Acceptor.h"
+#include "EventLoopThreadPool.h"
+#include "InetAddress.h"
 
 namespace tihi {
 

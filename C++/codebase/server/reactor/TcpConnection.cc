@@ -1,5 +1,7 @@
 #include "TcpConnection.h"
 
+#include <spdlog/spdlog.h>
+
 #include "EventLoop.h"
 #include "SocketsOps.h"
 #include "log.h"
@@ -55,8 +57,6 @@ void TcpConnection::connectDestroyed() {
     setState(StateE::kDisconnected);
     channel_->disableAll();  // 可能不经过 handleClose 直接调用 connectDestroyed
     connectionCallback_(shared_from_this());
-
-    // loop_->updateChannel(channel_.get());
 }
 
 
@@ -75,19 +75,20 @@ void TcpConnection::handleWrite() {
             if (outputBuffer_.readableBytes() == 0) {
                 channel_->disableWriting();
                 if (writeCompleteCallback_) {
-                    loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
+                    loop_->queueInLoop(
+                        std::bind(writeCompleteCallback_, shared_from_this()));
                 }
                 if (state_ == StateE::kDisconnecting) {
                     shutdownInloop();
                 }
             } else {
-                LOG_TRACE << "数据还没有发送完" << std::endl;
+                spdlog::trace("数据还没有发送完");
             }
         } else {
-            LOG_TRACE << "TcpConnection::handleWrite 写入错误" << std::endl;
+            spdlog::trace("TcpConnection::handleWrite 写入错误");
         }
     } else {
-        LOG_TRACE << "没有注册可写事件" << std::endl;
+        spdlog::trace("没有注册可写事件");
     }
 }
 
@@ -122,7 +123,8 @@ void TcpConnection::sendInloop(const std::string& message) {
                 LOG_TRACE << "没有发完，还有更多的数据需要发送" << std::endl;
             } else if (writeCompleteCallback_) {
                 // writeCompleteCallback_(shared_from_this());
-                loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
+                loop_->queueInLoop(
+                    std::bind(writeCompleteCallback_, shared_from_this()));
             }
         } else {
             nwrote = 0;
@@ -133,7 +135,9 @@ void TcpConnection::sendInloop(const std::string& message) {
     }
 
     assert(nwrote >= 0);
+
     // 若数据没有发送完毕，则将其放入发送缓冲，并注册可写事件
+    // 接下来的数据发送任务就交给 handleWrite 去执行了
     if (static_cast<size_t>(nwrote) < message.size()) {
         outputBuffer_.append(message.data() + nwrote, message.size() - nwrote);
         if (!channel_->isWriting()) {
@@ -156,13 +160,9 @@ void TcpConnection::shutdownInloop() {
     }
 }
 
-void TcpConnection::setTcpNoDelay(bool on) {
-    socket_->setTcpNoDelay(on);
-}
+void TcpConnection::setTcpNoDelay(bool on) { socket_->setTcpNoDelay(on); }
 
-void TcpConnection::setTcpKeepAlive(bool on) {
-    socket_->setTcpKeepAlive(on);
-}
+void TcpConnection::setTcpKeepAlive(bool on) { socket_->setTcpKeepAlive(on); }
 
 // 利用全局对象初始化在程序开始之前就忽略 SIGPIPIE
 IgnoreSigPipe __ignoreSigPipeObj;

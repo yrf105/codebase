@@ -1,14 +1,16 @@
 syntax = "proto3";
 
-option go_package = "github.com/yrf105/codebase/Go/gRPC-learning/pcbook";
+option go_package = "github.com/yrf105/codebase/Go/gRPC-learning/pb";
+
+import "memory_message.proto";
 
 message Storage {
-    enum Type {
+    enum Driver {
         UNKNOWN = 0;
         SSD = 1;
         HDD = 2;
     }
 
-    int32 number = 1;
-    Type type = 2;
+    Memory memory = 1;
+    Driver driver = 2;
 }

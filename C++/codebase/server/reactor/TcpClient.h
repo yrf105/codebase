@@ -2,10 +2,11 @@
 #define REACTOR_TCPCLIENT_H
 
 #include <atomic>
-#include "TcpConnection.h"
-#include "Connector.h"
 #include <boost/noncopyable.hpp>
 #include <mutex>
+
+#include "Connector.h"
+#include "TcpConnection.h"
 
 namespace tihi {
 
@@ -27,12 +28,8 @@ public:
         return tcpConnection_;
     }
 
-    bool retry() const {
-        return retry_;
-    }
-    void enableRetry() {
-        retry_ = true;
-    }
+    bool retry() const { return retry_; }
+    void enableRetry() { retry_ = true; }
 
     void setConnectionCallback(const TcpConnection::ConnectionCallback& cb) {
         connectionCallback_ = cb;
@@ -40,7 +37,8 @@ public:
     void setMessageCallback(const TcpConnection::MessageCallback& cb) {
         messageCallback_ = cb;
     }
-    void setWriteCompleteCallback(const TcpConnection::WriteCompleteCallback& cb) {
+    void setWriteCompleteCallback(
+        const TcpConnection::WriteCompleteCallback& cb) {
         writeCompleteCallback_ = cb;
     }
 
@@ -51,7 +49,7 @@ private:
 private:
     EventLoop* loop_;
     Connector::SPtr connector_;
-    
+
     TcpConnection::ConnectionCallback connectionCallback_;
     TcpConnection::MessageCallback messageCallback_;
     TcpConnection::WriteCompleteCallback writeCompleteCallback_;
@@ -64,6 +62,6 @@ private:
     TcpConnection::SPtr tcpConnection_;
 };
 
-} // namespace tihi
+}  // namespace tihi
 
-#endif // REACTOR_TCPCLIENT_H
+#endif  // REACTOR_TCPCLIENT_H
