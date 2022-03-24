@@ -6,3 +6,6 @@ target_link_libraries(thread_run_test pthread)
 
 add_executable(static_const_int_test static_const_int_test.cc)
 target_link_libraries(static_const_int_test pthread)
+
+add_executable(array_test array_test.cc)
+target_link_libraries(array_test pthread)

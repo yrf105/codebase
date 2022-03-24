@@ -28,6 +28,18 @@ static void test_hash_val() {
     std::cout << boost::hash_value(&a) << std::endl;
 }
 
+
+struct B {
+    int operator<< (int i) {
+        return i;
+    };
+    std::ostream& operator<< (std::ostream& os, int i) {
+
+    }
+};
+
+
+
 int main(int argc, char** argv) {
 
     test();

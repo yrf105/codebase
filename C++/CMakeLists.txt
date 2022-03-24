@@ -9,7 +9,7 @@ include(cmake/utils.cmake)
 #判断编译器类型,如果是gcc编译器,则在编译选项中加入c++11支持
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -ggdb -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -std=c++2a ${CMAKE_CXX_FLAGS}")
-    # message(STATUS "optional:-std=c++11")   
+    # message(STATUS "optional:-std=c++11")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 # 定义工程根目录; CMAKE_SOURCE_DIR为内建变量，表示工程根目录的CMakeLists.txt文件路径
@@ -49,7 +49,7 @@ add_library(codebase SHARED ${LIB_SRC})
 redefine_file_macro(codebase)
 
 # 生成可执行文件并添加依赖
-# codebase_add_executable(test "tests/test.cc" codebase "${LIBS}")
+codebase_add_executable(test "tests/test.cc" codebase "${LIBS}")
 # codebase_add_executable(test_random_number "tests/test_random_number.cc" codebase "${LIBS}")
 # codebase_add_executable(test_stl "tests/test_stl.cc" codebase "${LIBS}")
 # codebase_add_executable(test_allocator "tests/test_allocator.cc" codebase "${LIBS}")
@@ -77,8 +77,8 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 # 指定输出库的存放路径
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
-add_subdirectory(codebase/concurrent) 
-add_subdirectory(codebase/basic) 
+add_subdirectory(codebase/concurrent)
+add_subdirectory(codebase/basic)
 add_subdirectory(codebase/server)
 # add_subdirectory(codebase/effective)
 # add_subdirectory(codebase/moreeffective)

@@ -11,6 +11,7 @@ func TempDirFile() {
 	f, err := ioutil.TempFile("", "sample")
 	check(err)
 	fmt.Println(f.Name()) // /tmp/sample938602552
+	fmt.Println(filepath.Join(filepath.Dir(f.Name()), fmt.Sprintf("%v-%v-%v", 1,2,3)))
 
 	defer os.Remove(f.Name())
 
